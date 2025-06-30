@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function formLogin()
     {
-        return view('layout.auth');
+        return view('layouts.auth');
     }
 
     public function loginAction(Request $request)
@@ -22,12 +22,9 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
             logger('User setelah login:', ['user' => $user]);
-
-            // Tambahkan logika redirect berdasarkan role di sini
             return redirect()->intended('/dashboard');
         }
-
-        // jika gagal login
+        
         return redirect('/')->withErrors([
             'name' => 'Username atau password salah.',
         ]);

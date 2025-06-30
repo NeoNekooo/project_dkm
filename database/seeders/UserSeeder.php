@@ -3,16 +3,16 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\User; // ✅ Tambahkan ini!
+use App\Models\User; 
 
 class UserSeeder extends Seeder
 {
     public function run(): void
     {
         User::create([
-            'name'     => 'kucuk',
-            'email'    => 'finnnxptrix@gmail.com',
-            'password' => 'munawar',
+            'name'     => 'atmin',
+            'email'    => 'pler@gmail.com',
+            'password' => 'admin123',
         ]);
     }
 }
