@@ -37,7 +37,7 @@
 
             slides[current].classList.remove("opacity-0");
             slides[current].classList.add("opacity-100");
-            slides[current].style.transform = 'scale(1.05)'; // slight zoom
-        }, 6000); // Every 6s
+            slides[current].style.transform = 'scale(1.05)';
+        }, 6000); 
     });
 </script>

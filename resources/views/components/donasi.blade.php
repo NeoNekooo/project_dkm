@@ -19,6 +19,6 @@
         <div class="flex justify-center">
             <img src="https://i.pinimg.com/736x/09/bb/2e/09bb2ef3c387d443e073636168471df0.jpg" alt="QRIS Infaq" class="rounded-xl  shadow-md w-full max-w-[350px]">
         </div>
->
+
     </div>
 </section>
