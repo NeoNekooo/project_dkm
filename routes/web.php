@@ -16,5 +16,9 @@ Route::get('/tentang-kami', function () {
     return view('pages.user.tentang-kami');
 })->name('tentang');
 
+Route::get('/program', function () {
+    return view('pages.user.program');
+})->name('program');
+
 
 Route::middleware('auth')->get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');

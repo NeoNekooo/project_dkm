@@ -1,7 +1,7 @@
 <section class="bg-[#0B1A40] text-white py-12">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="max-w-6xl mx-auto my-6 px-4">
         <h2 class="text-3xl font-bold text-center mb-12">Fasilitas</h2>
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center mb-4">
             <div>
                 <div class="text-4xl mb-4"><i class="fas fa-mosque"></i></div>
                 <h3 class="text-lg font-bold mb-2">TEMPAT IBADAH</h3>

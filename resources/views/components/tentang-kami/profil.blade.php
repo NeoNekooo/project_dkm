@@ -1,19 +1,7 @@
 <section class="relative bg-[#0B1A40] text-white overflow-hidden py-20 px-6">
     <!-- Gradient Blobs -->
-    <div class="absolute top-0 -left-10 w-72 h-72 bg-purple-600/30 blur-3xl rounded-full z-0"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-400/20 blur-3xl rounded-full z-0"></div>
 
     <div class="max-w-6xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">
-        <!-- Portrait -->
-        <div class="flex justify-center md:justify-start relative">
-            <div class="bg-white/10 backdrop-blur-sm p-2 rounded-3xl shadow-lg border border-white/20 hover:scale-105 transition duration-500">
-                <img src="https://i.pinimg.com/736x/5c/9c/53/5c9c534294330247779727f6bd9cf43f.jpg"
-                    alt="Ketua DKM"
-                    class="w-64 h-64 md:w-72 md:h-72 object-cover rounded-2xl shadow-xl ring-4 ring-yellow-400/60" />
-            </div>
-        </div>
-
-        <!-- Text Info -->
         <div>
             <p class="uppercase text-yellow-400 tracking-widest text-sm mb-3">Ketua DKM</p>
             <h2 class="text-4xl font-bold mb-4 leading-tight">H. Ahmad Maulana</h2>
@@ -29,5 +17,16 @@
                 Lihat Program DKM
             </a>
         </div>
+        <!-- Portrait -->
+        <div class="flex justify-center md:justify-start relative">
+            <div class="bg-white/10 backdrop-blur-sm p-4  shadow-lg border border-white/20 ">
+                <img src="https://btkp-diy.or.id/file/blog/Jenderal-Soedirman.jpg"
+                    alt="Ketua DKM"
+                    class="w-full h-full shadow-xl" />
+            </div>
+        </div>
+
+        <!-- Text Info -->
+
     </div>
 </section>

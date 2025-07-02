@@ -15,7 +15,7 @@
             <p class="text-gray-700 mb-6 text-justify">
                 Dikelola oleh Dewan Kemakmuran Masjid (DKM) bersama para relawan dan masyarakat, kami berupaya menghadirkan lingkungan yang nyaman dan penuh keberkahan bagi seluruh jama’ah.
             </p>
-            <a href="#program" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition">
+            <a href="{{route('program')}}" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-5 rounded-lg shadow-md transition">
                 Lihat Program Kami
             </a>
         </div>

@@ -1,24 +1,23 @@
-<section class="bg-white py-16 px-6 md:px-0">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+<section class="bg-green-950 text-white py-16">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
 
-
-        <!-- Teks Keterangan -->
         <div>
-            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Infaq Masjid Melalui QR Scan</h2>
-            <p class="text-gray-700 mb-4 text-justify">
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis consequatur, quidem quisquam et quos animi enim! Quos voluptas tempora accusantium!
+            <h2 class="text-3xl font-bold mb-4">Tentang Kami</h2>
+            <p class="text-white mb-4 text-justify">
+                Masjid sini VMC adalah tempat ibadah yang berdiri dengan semangat kebersamaan dan pelayanan terhadap umat.
+                Kami berkomitmen menyediakan fasilitas terbaik untuk ibadah, pendidikan Islam, kegiatan sosial, dan pembinaan generasi muda.
             </p>
-            <p class="text-gray-700 mb-4 text-justify">
+            <p class="text-white mb-6 text-justify">
+                Dikelola oleh Dewan Kemakmuran Masjid (DKM) bersama para relawan dan masyarakat, kami berupaya menghadirkan lingkungan yang nyaman dan penuh keberkahan bagi seluruh jama’ah.
             </p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis incidunt ipsam sed excepturi laborum. Aliquam nisi atque laudantium vel nihil iusto libero modi quas tenetur reprehenderit asperiores dolorum quis iste eaque aliquid, quos assumenda, illum ut ea nulla! Voluptas nisi quo sunt perferendis rerum obcaecati?
-            <p class="text-gray-700 text-justify">
-               Lorem ipsum dolor sit amet.
-            </p>
-
-        </div
-        <div class="flex justify-center">
-            <img src="https://i.pinimg.com/736x/09/bb/2e/09bb2ef3c387d443e073636168471df0.jpg" alt="QRIS Infaq" class="rounded-xl  shadow-md w-full max-w-[350px]">
         </div>
+
+        <!-- Gambar -->
+        <div>
+            <img src="https://i.pinimg.com/736x/60/e5/42/60e542e5a1d1d17bbacd7b1a44594bb3.jpg" alt="Tentang Masjid" class="rounded-2xl shadow-lg w-full object-cover">
+        </div>
+
+        <!-- Teks -->
 
     </div>
 </section>
