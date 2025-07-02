@@ -9,7 +9,7 @@
         <div>
             <h2 class="text-3xl font-bold mb-4">Tentang Kami</h2>
             <p class="text-gray-700 mb-4 text-justify">
-                Masjid Al Ikhlash VMC adalah tempat ibadah yang berdiri dengan semangat kebersamaan dan pelayanan terhadap umat.
+                Masjid sini VMC adalah tempat ibadah yang berdiri dengan semangat kebersamaan dan pelayanan terhadap umat.
                 Kami berkomitmen menyediakan fasilitas terbaik untuk ibadah, pendidikan Islam, kegiatan sosial, dan pembinaan generasi muda.
             </p>
             <p class="text-gray-700 mb-6 text-justify">

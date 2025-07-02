@@ -29,6 +29,6 @@
     </div>
 
     <div class="bg-green-900 text-center text-sm text-white py-4 mt-8">
-        Masjid Al Ikhlash © 2022. All rights reserved.
+        Masjid sini © 2022. All rights reserved.
     </div>
 </footer>
