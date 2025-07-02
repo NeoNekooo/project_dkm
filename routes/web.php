@@ -20,5 +20,9 @@ Route::get('/program', function () {
     return view('pages.user.program');
 })->name('program');
 
+Route::get('/infaq', function () {
+    return view('pages.user.infaq');
+})->name('infaq');
+
 
 Route::middleware('auth')->get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');

@@ -8,7 +8,7 @@
             Program Unggulan Kami
         </h1>
         <p class="text-lg md:text-xl text-gray-300 mb-6">
-            Melalui DKM Masjid Al Ikhlash, kami menjalankan berbagai program demi tercapainya <span class="text-yellow-400 font-semibold">Visi & Misi</span> Masjid secara menyeluruh dan berkelanjutan.
+            Melalui DKM Masjid ini, kami menjalankan berbagai program demi tercapainya <span class="text-yellow-400 font-semibold">Visi & Misi</span> Masjid secara menyeluruh dan berkelanjutan.
         </p>
         <p class="text-sm text-gray-400 max-w-2xl mx-auto mb-10">
             Dukungan dari jama’ah sangat berarti dalam membangun lingkungan masjid yang makmur, edukatif, dan penuh berkah. Terima kasih atas infaq, tenaga, dan doa yang telah diberikan.

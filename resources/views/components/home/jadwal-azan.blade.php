@@ -1,6 +1,6 @@
-<section class="bg-white text-gray-800 py-13">
+<section class="bg-white text-gray-800 py-16">
     <div class="max-w-6xl mx-auto px-4">
-        <div class="border-t-2 border-gray-300 w-full mb-12"></div>
+        <div class="garisatas"></div>
 
         <h1 class="text-3xl font-bold text-center text-gray-800 mt-12 mb-12">JADWAL AZAN</h1>
 
@@ -15,7 +15,7 @@
         </div>
 
         <div class="overflow-x-auto rounded-lg shadow-md"> 
-            <table class="w-full text-left text-gray-700 bg-white"> 
+            <table class="w-full t text-gray-700 bg-white text-center"> 
                 <thead class="bg-blue-600 text-white uppercase text-sm">
                     <tr>
                         <th scope="col" class="py-3 px-6 rounded-tl-lg">Waktu Sholat</th>
