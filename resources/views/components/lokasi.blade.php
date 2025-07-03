@@ -1,8 +1,8 @@
-<section class="bg-[#0B1A40] text-white py-16">
+<section class="bg-emerald-900 text-white py-16">
     <div class="max-w-6xl mx-auto px-4">
 
-        <div class="garisatas-white"></div> 
-  
+        <div class="garisatas-white"></div>
+
         <h1 class="text-3xl font-bold text-center text-white mt-12 mb-12">LOAKSI KAMI</h1>
 
         <div class="w-full mt-12">

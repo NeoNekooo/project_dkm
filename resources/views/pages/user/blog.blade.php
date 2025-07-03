@@ -1,11 +1,10 @@
 @extends('layouts.user.user')
 
-@section('title', 'kontak')
+@section('title', 'event')
 
 @section('content')
 <x-navbar />
 
-<x-kontak.kontak-mesjid />
-<x-lokasi />
+<x-blog.blog />
+
 <x-footer-dashboard />
-@endsection

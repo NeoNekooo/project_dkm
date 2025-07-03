@@ -1,32 +1,59 @@
-<section class="relative bg-[#0B1A40] text-white overflow-hidden py-20 px-6">
-    <!-- Gradient Blobs -->
+<section class="relative  bg-gradient-to-r from-green-800 to-emerald-900  text-white py-24 px-6 overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-0 left-0 w-64 h-64 bg-yellow-400/10 rounded-full blur-3xl z-0"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl z-0"></div>
+    <div class="absolute inset-0 z-0 opacity-10 bg-[url('https://i.pinimg.com/736x/3e/3f/4f/3e3f4f19b77e2cd505cf4d1d7b30f3e2.jpg')] bg-cover mix-blend-soft-light"></div>
 
-    <div class="max-w-6xl mx-auto relative z-10 grid md:grid-cols-2 gap-12 items-center">
-        <div>
-            <p class="uppercase text-yellow-400 tracking-widest text-sm mb-3">Ketua DKM</p>
-            <h2 class="text-4xl font-bold mb-4 leading-tight">H. Ahmad Maulana</h2>
-            <p class="text-gray-300 leading-relaxed mb-4">
-                Sejak menjabat pada 2020, beliau memimpin berbagai program keagamaan dan sosial dengan penuh semangat dan kebijaksanaan.
-            </p>
-            <p class="text-gray-400 leading-relaxed mb-6">
-                Di bawah kepemimpinannya, Masjid menjadi lebih hidup: dari kajian harian, program anak-anak, hingga renovasi fasilitas yang semakin nyaman dan modern.
-            </p>
-            <a href="#"
-                class="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-[#0B1A40] font-bold px-6 py-3 rounded-md transition duration-300 shadow-md">
-                <i class="fas fa-arrow-right"></i>
-                Lihat Program DKM
-            </a>
-        </div>
-        <!-- Portrait -->
-        <div class="flex justify-center md:justify-start relative">
-            <div class="bg-white/10 backdrop-blur-sm p-4  shadow-lg border border-white/20 ">
-                <img src="https://btkp-diy.or.id/file/blog/Jenderal-Soedirman.jpg"
-                    alt="Ketua DKM"
-                    class="w-full h-full shadow-xl" />
+    <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-16">
+        <!-- Content -->
+        <div class="space-y-6">
+            <div class="inline-flex items-center gap-3">
+                <div class="w-12 h-1 bg-yellow-500 rounded-full"></div>
+                <span class="text-yellow-500 uppercase tracking-widest text-sm font-medium">Ketua DKM</span>
+            </div>
+
+            <h2 class="text-3xl md:text-4xl font-bold leading-tight">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">H. Ahmad Maulana</span>
+            </h2>
+
+            <div class="space-y-4 text-gray-300 leading-relaxed">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, blanditiis at vero cum rerum similique quis laudantium deleniti obcaecati tempore?
+                </p>
+                <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, consectetur sapiente! Nulla voluptatum, id illum quae totam ratione voluptatem, dolorem cumque animi amet quasi!
+                </p>
+            </div>
+
+            <div class="pt-2">
+                <a href="#" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-[#0B1A40] font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
+                    Lihat Program DKM
+                    <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+                </a>
             </div>
         </div>
 
-        <!-- Text Info -->
+        <!-- Portrait -->
+        <div class="flex justify-center relative group">
+            <div class="relative overflow-hidden rounded-xl shadow-2xl w-full max-w-md">
+                <!-- Decorative frame elements -->
+                <div class="absolute inset-0 border-2 border-yellow-400/30 rounded-xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
+                <div class="absolute inset-0 border-2 border-white/10 rounded-xl transform -rotate-1 group-hover:rotate-0 transition-transform duration-700"></div>
 
+                <!-- Portrait image with gradient overlay -->
+                <div class="relative aspect-[3/4] overflow-hidden">
+                    <img src="https://btkp-diy.or.id/file/blog/Jenderal-Soedirman.jpg"
+                        alt="Ketua DKM"
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                </div>
+
+                <!-- Title overlay -->
+                <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
+                    <h3 class="text-xl font-bold text-white">H. Ahmad Maulana</h3>
+                    <p class="text-yellow-400 text-sm">Ketua DKM Masjid Al-Ikhlash</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

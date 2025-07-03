@@ -29,8 +29,8 @@
     <x-home.hero-info />
     <x-home.about />
     <x-home.gallery-slide />
-    <x-home.donasi />
-    <x-home.lokasi />
+    {{-- <x-home.donasi /> --}}
+    <x-lokasi />
     <x-home.jadwal-azan/>
     <x-footer-dashboard />
 

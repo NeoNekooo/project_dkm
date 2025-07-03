@@ -28,15 +28,17 @@ Route::get('/event-mesjid', function () {
     return view('pages.user.event-mesjid');
 })->name('event-mesjid');
 
-Route::get('/berita', function () {
-    return view('pages.user.berita');
-})->name('berita');
+Route::get('/blog', function () {
+    return view('pages.user.blog');
+})->name('blog');
 
 Route::get('/kontak', function () {
     return view('pages.user.kontak');
 })->name('kontak');
 
-
+Route::get('/pengumuman', function () {
+    return view('pages.user.pengumuman');
+})->name('pengumuman');
 
 
 Route::middleware('auth')->get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
