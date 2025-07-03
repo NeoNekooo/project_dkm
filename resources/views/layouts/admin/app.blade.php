@@ -20,7 +20,11 @@
                 </button>
                 <span class="text-lg font-semibold">{{ env('APP_NAME') }}</span>
             </div>
-            <form action="" method="POST" class="ml-auto">
+           
+            <form action="{{ route('logout') }}" method="POST" class="ml-auto">
+                 <button class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded text-sm">
+                <a href="{{ url('/') }}">Beranda</a>
+            </button>
                 @csrf
                 <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-sm">
                     <i class="fas fa-sign-out-alt"></i> Logout
@@ -34,17 +38,18 @@
             <!-- Sidebar -->
             <aside id="sidebar" class="w-64 bg-gray-800 text-white py-6 px-4 hidden md:block">
                 <div class="flex flex-col items-center mb-6">
-                    <img src="https://i.pinimg.com/736x/f4/60/a3/f460a3a083bf32447cd0ffb2f6bd646d.jpg" class="w-16 h-16 rounded-full mb-2" alt="User Photo">
+                    <img src="https://i.pinimg.com/736x/f4/60/a3/f460a3a083bf32447cd0ffb2f6bd646d.jpg"
+                        class="w-16 h-16 rounded-full mb-2" alt="User Photo">
                     <p class="text-sm font-medium">{{ Auth::user()->name ?? 'User' }}</p>
                 </div>
 
                 <nav class="space-y-2">
-                        <a href="" class="block py-2 px-3 rounded hover:bg-gray-700">Dashboard</a>
-                        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Anggota</a>
-                        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Kategori Buku</a>
-                        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Buku</a>
-                        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Peminjaman</a>
-                        <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Laporan Peminjaman</a>
+                    <a href="" class="block py-2 px-3 rounded hover:bg-gray-700">Dashboard</a>
+                    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Anggota</a>
+                    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Kategori Buku</a>
+                    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Buku</a>
+                    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Peminjaman</a>
+                    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Laporan Peminjaman</a>
                 </nav>
             </aside>
 

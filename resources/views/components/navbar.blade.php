@@ -1,7 +1,8 @@
 <!-- Navigation -->
 <nav class="bg-white shadow-md py-4 px-4 md:px-8 flex justify-between items-center sticky top-0 z-50">
     <div class="flex items-center">
-        <img src="{{ asset('img/image.png') }}" alt="Logo DKM" class="h-12 mr-3 rounded-full shadow-md border-2 border-green-100">
+        <img src="{{ asset('img/image.png') }}" alt="Logo DKM"
+            class="h-12 mr-3 rounded-full shadow-md border-2 border-green-100">
         <span class="text-xl font-bold text-gray-800">DKM <span class="text-green-600">Al-Ikhlash</span></span>
     </div>
 
@@ -21,18 +22,38 @@
             </button>
 
             <!-- Dropdown Menu -->
-            <div class="absolute z-10 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200
+            <div
+                class="absolute z-10 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-200
                         flex flex-col bg-white shadow-lg rounded-lg py-2 w-48 mt-2 border border-green-100">
-                <a href="{{ route('blog') }}" class="px-4 py-2 hover:bg-green-50 hover:text-green-700 transition-colors duration-200">
+                <a href="{{ route('blog') }}"
+                    class="px-4 py-2 hover:bg-green-50 hover:text-green-700 transition-colors duration-200">
                     <i class="fas fa-newspaper mr-2 text-green-600"></i> Berita
                 </a>
-                <a href="{{ route('pengumuman') }}" class="px-4 py-2 hover:bg-green-50 hover:text-green-700 transition-colors duration-200">
+                <a href="{{ route('pengumuman') }}"
+                    class="px-4 py-2 hover:bg-green-50 hover:text-green-700 transition-colors duration-200">
                     <i class="fas fa-bullhorn mr-2 text-green-600"></i> Pengumuman
                 </a>
             </div>
         </div>
 
         <a href="{{ route('kontak') }}" class="hover:text-green-600 transition-colors duration-200">Kontak</a>
+
+        @auth
+            @if (auth()->user()->role === 'admin')
+                <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-accent mr-2">
+                    Admin Dashboard
+                </a>
+            @endif
+
+            <form method="POST" action="{{ route('logout') }}" class="inline">
+                @csrf
+                <button type="submit" class="btn btn-sm btn-error text-red-700">
+                    Logout
+                </button>
+            </form>
+        @endauth
+
+
     </div>
 
     <!-- Mobile Hamburger -->

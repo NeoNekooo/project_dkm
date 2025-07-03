@@ -33,6 +33,7 @@ $articles = [
                 Berita & Kegiatan Terbaru
                 <span class="absolute bottom-[-8px] left-1/2 transform -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-green-500 to-teal-400 rounded-full"></span>
             </h2>
+            
             <p class="text-lg text-green-600 mt-4 max-w-2xl mx-auto">
                 Informasi terkini dari Masjid Al-Ikhlash untuk Jama'ah yang lebih tahu dan peduli.
             </p>
