@@ -24,5 +24,19 @@ Route::get('/infaq', function () {
     return view('pages.user.infaq');
 })->name('infaq');
 
+Route::get('/event-mesjid', function () {
+    return view('pages.user.event-mesjid');
+})->name('event-mesjid');
+
+Route::get('/berita', function () {
+    return view('pages.user.berita');
+})->name('berita');
+
+Route::get('/kontak', function () {
+    return view('pages.user.kontak');
+})->name('kontak');
+
+
+
 
 Route::middleware('auth')->get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
