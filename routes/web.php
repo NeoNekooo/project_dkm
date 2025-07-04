@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\DkmProfilController;
 
 
 Route::get('/login', [LoginController::class, 'formLogin']);
@@ -43,6 +44,8 @@ Route::get('/pengumuman', function () {
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
+    Route::get('/admin/profil', [DkmProfilController::class, 'index'])->name('admin.profil.index');
+    Route::put('/admin/profil', [DkmProfilController::class, 'update'])->name('admin.profil.update');
 
 
 
@@ -52,13 +55,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 
 
-    Route::post('/logout', function () {
+
+ 
+});
+
+   Route::post('/logout', function () {
     Auth::logout();
     request()->session()->invalidate();
     request()->session()->regenerateToken();
     return redirect('/');
 })->name('logout');
-});
-
-
-

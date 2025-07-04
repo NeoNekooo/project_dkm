@@ -44,8 +44,8 @@
                 </div>
 
                 <nav class="space-y-2">
-                    <a href="" class="block py-2 px-3 rounded hover:bg-gray-700">Dashboard</a>
-                    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Anggota</a>
+                    <a href="{{ route('admin.dashboard')}}" class="block py-2 px-3 rounded hover:bg-gray-700">Dashboard</a>
+                    <a href="{{ route('admin.profil.index') }}" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola profile</a>
                     <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Kategori Buku</a>
                     <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Buku</a>
                     <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Peminjaman</a>
@@ -60,7 +60,7 @@
         </div>
 
         <footer class="bg-white text-center text-sm text-gray-500 border-t py-2">
-            yeye
+            miaw
         </footer>
         <!-- Footer -->
     </div>
