@@ -46,8 +46,8 @@
                 <nav class="space-y-2">
                     <a href="{{ route('admin.dashboard')}}" class="block py-2 px-3 rounded hover:bg-gray-700">Dashboard</a>
                     <a href="{{ route('admin.profil.index') }}" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola profile</a>
-                    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Kategori Buku</a>
-                    <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Buku</a>
+                    <a href="{{ route('admin.kontak.index') }}" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola kontak</a>
+                    <a href="{{ route('admin.tentang.index') }}" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Tentang Kami</a>
                     <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Kelola Peminjaman</a>
                     <a href="#" class="block py-2 px-3 rounded hover:bg-gray-700">Laporan Peminjaman</a>
                 </nav>

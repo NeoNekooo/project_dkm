@@ -14,10 +14,12 @@ class DkmProfil extends Model
     protected $fillable = [
         'nama',
         'visi',
+        'id_tentang',
         'id_kontak',
-        'tentang_kami',
         'logo',
         'background',
+        'luas_tanah',
+        'tahun_berdiri',
     ];
 
     
@@ -35,4 +37,10 @@ class DkmProfil extends Model
     {
         return $this->belongsTo(File::class, 'background');
     }
+
+    public function tentangKami()
+    {
+    return $this->belongsTo(TentangKami::class, 'id_tentang');
+    }
+
 }

@@ -13,16 +13,15 @@
             </div>
 
             <h2 class="text-3xl md:text-4xl font-bold leading-tight">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">H. Ahmad Maulana</span>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">{{ $profil->tentangKami->nama_ketua }}</span>
             </h2>
 
             <div class="space-y-4 text-gray-300 leading-relaxed">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, blanditiis at vero cum rerum similique quis laudantium deleniti obcaecati tempore?
-                </p>
-                <p>
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, consectetur sapiente! Nulla voluptatum, id illum quae totam ratione voluptatem, dolorem cumque animi amet quasi!
-                </p>
+                @foreach (explode("\n", $profil->tentangKami->sejarah_ketua ?? '') as $paragraph)
+                    @if (trim($paragraph) != '')
+                        <p>{{ $paragraph }}</p>
+                    @endif
+                @endforeach
             </div>
 
             <div class="pt-2">
@@ -42,7 +41,7 @@
 
                 <!-- Portrait image with gradient overlay -->
                 <div class="relative aspect-[3/4] overflow-hidden">
-                    <img src="https://btkp-diy.or.id/file/blog/Jenderal-Soedirman.jpg"
+                    <img src="{{ asset('storage/' . $profil->tentangKami->foto_ketua) }}"
                         alt="Ketua DKM"
                         class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -50,8 +49,8 @@
 
                 <!-- Title overlay -->
                 <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                    <h3 class="text-xl font-bold text-white">H. Ahmad Maulana</h3>
-                    <p class="text-yellow-400 text-sm">Ketua DKM Masjid Al-Ikhlash</p>
+                    <h3 class="text-xl font-bold text-white">{{ $profil->tentangKami->nama_ketua}}</h3>
+                    <p class="text-yellow-400 text-sm">Ketua DKM {{ $profil->nama }}</p>
                 </div>
             </div>
         </div>

@@ -6,9 +6,6 @@
                 <img src="{{ asset('storage/' . $profil->logo) }}" alt="Logo Masjid" class="h-10 mr-3 rounded-full border-2 border-green-100">
                 <span class="text-xl font-bold">{{ $profil->nama }}</span>
             </div>
-            <p class="text-sm text-green-100 leading-relaxed">
-                {{ $profil->tentang_kami }}
-            </p>
             <div class="flex space-x-4 pt-2">
                 <a href="#" class="text-green-200 hover:text-white transition-colors duration-200"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="text-green-200 hover:text-white transition-colors duration-200"><i class="fab fa-instagram"></i></a>

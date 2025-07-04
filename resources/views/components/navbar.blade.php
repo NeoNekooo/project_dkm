@@ -1,9 +1,9 @@
 <!-- Navigation -->
 <nav class="bg-white shadow-md py-4 px-4 md:px-8 flex justify-between items-center sticky top-0 z-50">
     <div class="flex items-center">
-        <img src="{{ asset('img/image.png') }}" alt="Logo DKM"
+        <img src="{{ asset('storage/' . $profil->logo) }}" alt="Logo DKM"
             class="h-12 mr-3 rounded-full shadow-md border-2 border-green-100">
-        <span class="text-xl font-bold text-gray-800">DKM <span class="text-green-600">Al-Ikhlash</span></span>
+        <span class="text-xl font-bold text-gray-800">DKM <span class="text-green-600">{{ $profil->nama }}</span></span>
     </div>
 
     <!-- Navigation Links -->
@@ -43,14 +43,14 @@
                 <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-accent mr-2">
                     Admin Dashboard
                 </a>
-            @endif
-
+            
             <form method="POST" action="{{ route('logout') }}" class="inline">
                 @csrf
                 <button type="submit" class="btn btn-sm btn-error text-red-700">
                     Logout
                 </button>
             </form>
+            @endif
         @endauth
 
 

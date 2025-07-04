@@ -1,4 +1,5 @@
-<section class="relative h-screen flex items-center justify-center bg-gradient-to-br from-white to-green-50 overflow-hidden">
+<section class="relative h-screen flex items-center justify-center bg-no-repeat bg-cover bg-center overflow-hidden"
+    style="background-image: url('{{ asset('storage/' . $profil->background) }}');">
     <!-- Decorative elements -->
     <div class="absolute top-0 left-0 w-64 h-64 bg-green-100 rounded-full blur-[100px] opacity-60"></div>
     <div class="absolute bottom-0 right-0 w-80 h-80 bg-green-50 rounded-full blur-[100px] opacity-60"></div>
@@ -17,7 +18,7 @@
             </div>
 
             <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                Selamat Datang di <span class="text-green-600">Masjid Kami</span>
+                Selamat Datang di <span class="text-green-600">{{ $profil->nama }}</span>
             </h1>
 
             <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">

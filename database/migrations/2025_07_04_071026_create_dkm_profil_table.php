@@ -14,11 +14,13 @@ return new class extends Migration {
             $table->id();
             $table->string('nama');
             $table->text('visi')->nullable();
+            $table->unsignedBigInteger('id_tentang')->nullable();
             $table->unsignedBigInteger('id_kontak')->nullable();
-            $table->text('tentang_kami')->nullable();
             $table->string('logo')->nullable();
             $table->string('background')->nullable();
             $table->timestamps();
+            $table->string('luas_tanah')->nullable();
+            $table->string('tahun_berdiri')->nullable();
         });
     }
 

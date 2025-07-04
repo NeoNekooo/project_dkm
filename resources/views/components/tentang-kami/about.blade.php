@@ -4,15 +4,23 @@
     <div class="absolute bottom-0 left-0 w-80 h-80 bg-green-50 rounded-full blur-[100px] opacity-40"></div>
 
     <!-- Subtle Islamic pattern -->
-    <div class="absolute inset-0 opacity-5 bg-[url('https://i.pinimg.com/736x/3e/3f/4f/3e3f4f19b77e2cd505cf4d1d7b30f3e2.jpg')] bg-cover mix-blend-overlay"></div>
+    <div
+        class="absolute inset-0 opacity-5 bg-[url('https://i.pinimg.com/736x/3e/3f/4f/3e3f4f19b77e2cd505cf4d1d7b30f3e2.jpg')] bg-cover mix-blend-overlay">
+    </div>
 
     <div class="relative z-10 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
         <!-- Image with decorative frame -->
         <div class="group relative">
-            <div class="absolute -inset-4 border-2 border-green-300 rounded-lg transform rotate-1 group-hover:rotate-0 transition-transform duration-500"></div>
-            <img src="https://i.pinimg.com/736x/69/11/80/6911800702729e23836c39d38e78a667.jpg"
-                alt="Masjid Image"
-                class="relative z-10 rounded-lg shadow-xl transform group-hover:scale-[1.02] transition-all duration-500 w-full h-auto" />
+            <div
+                class="absolute -inset-4 border-2 border-green-300 rounded-lg transform rotate-1 group-hover:rotate-0 transition-transform duration-500">
+            </div>
+            @if ($profil->tentangKami && $profil->tentangKami->foto_masjid)
+                <img src="{{ asset('storage/' . $profil->tentangKami->foto_masjid) }}" alt="Foto Masjid"
+                    class="relative z-10 rounded-lg shadow-xl transform group-hover:scale-[1.02] transition-all duration-500 w-full h-auto">
+            @else
+                <p>Belum ada foto masjid yang diunggah.</p>
+            @endif
+
         </div>
 
         <!-- Content -->
@@ -24,25 +32,25 @@
 
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
                 Sejarah Singkat<br>
-                <span class="text-green-600">Masjid Kami</span>
+                <span class="text-green-600">{{ $profil->nama }}</span>
             </h2>
 
             <div class="space-y-4 text-gray-600 leading-relaxed">
-                <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusantium, repellat aliquid qui odit soluta vero repudiandae, optio, numquam inventore omnis dolores. Laudantium mollitia aspernatur accusantium nulla, dicta soluta non natus aliquid, nemo enim, sint sapiente rerum quibusdam a deserunt?
-                <p>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum voluptatibus deleniti quidem a sapiente amet!
-                </p>
+                @foreach (explode("\n", $profil->tentangKami->isi ?? '') as $paragraph)
+                    @if (trim($paragraph) != '')
+                        <p>{{ $paragraph }}</p>
+                    @endif
+                @endforeach
             </div>
 
             <div class="grid grid-cols-2 gap-4 pt-4">
                 <div class="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
                     <p class="text-green-600 text-sm font-medium">Luas Tanah</p>
-                    <p class="text-xl font-bold text-gray-800">210 m²</p>
+                    <p class="text-xl font-bold text-gray-800">{{ $profil->luas_tanah }}</p>
                 </div>
                 <div class="bg-white p-4 rounded-lg border border-green-100 shadow-sm">
                     <p class="text-green-600 text-sm font-medium">Tahun Berdiri</p>
-                    <p class="text-xl font-bold text-gray-800">2000</p>
+                    <p class="text-xl font-bold text-gray-800">{{ $profil->tahun_berdiri }}</p>
                 </div>
             </div>
 

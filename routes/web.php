@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\DkmProfilController;
+use App\Http\Controllers\Admin\TentangKamiController;
+use App\Http\Controllers\Admin\KontakController;
 
 
 Route::get('/login', [LoginController::class, 'formLogin']);
@@ -46,7 +48,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/profil', [DkmProfilController::class, 'index'])->name('admin.profil.index');
     Route::put('/admin/profil', [DkmProfilController::class, 'update'])->name('admin.profil.update');
-
+    Route::get('/admin/kontak', [KontakController::class, 'index'])->name('admin.kontak.index');
+    Route::put('/admin/kontak/update', [KontakController::class, 'update'])->name('admin.kontak.update');
+    Route::get('/admin/tentang-kami', [TentangKamiController::class, 'index'])->name('admin.tentang.index');
+    Route::put('/admin/tentang-kami/update', [TentangKamiController::class, 'update'])->name('admin.tentang.update');
 
 
 

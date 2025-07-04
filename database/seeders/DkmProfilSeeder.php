@@ -12,8 +12,8 @@ class DkmProfilSeeder extends Seeder
         DkmProfil::create([
             'nama' => 'Masjid Nurul Hidayah',
             'visi' => 'Menjadi pusat ibadah dan kegiatan keagamaan yang inklusif dan dinamis.',
+            'id_tentang' => 1,
             'id_kontak' => 1, 
-            'tentang_kami' => 'Masjid Nurul Hidayah berdiri sejak 1980 dan aktif menyelenggarakan kegiatan keagamaan.',
             'logo' => null,
             'background' => null,
         ]);

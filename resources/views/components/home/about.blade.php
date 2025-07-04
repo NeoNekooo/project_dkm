@@ -6,10 +6,11 @@
     <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <!-- Image with hover effect -->
         <div class="group relative overflow-hidden rounded-2xl shadow-xl">
-            <img src="https://i.pinimg.com/736x/60/e5/42/60e542e5a1d1d17bbacd7b1a44594bb3.jpg"
-                 alt="Tentang Masjid"
-                 class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
-            <div class="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <img src="https://i.pinimg.com/736x/60/e5/42/60e542e5a1d1d17bbacd7b1a44594bb3.jpg" alt="Tentang Masjid"
+                class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+            <div
+                class="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            </div>
         </div>
 
         <!-- Content -->
@@ -20,30 +21,29 @@
             </div>
 
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 leading-tight">
-                Masjid Vila Mutiara Cikarang
+                Masjid {{ $profil->nama }}
             </h2>
 
             <div class="space-y-4 text-gray-600">
-                <p class="text-justify">
-                    Masjid sini VMC adalah tempat ibadah yang berdiri dengan semangat kebersamaan dan pelayanan terhadap umat.
-                    Kami berkomitmen menyediakan fasilitas terbaik untuk ibadah, pendidikan Islam, kegiatan sosial, dan pembinaan generasi muda.
-                </p>
-                <p class="text-justify">
-                    Dikelola oleh Dewan Kemakmuran Masjid (DKM) bersama para relawan dan masyarakat, kami berupaya menghadirkan lingkungan yang nyaman dan penuh keberkahan bagi seluruh jama'ah.
-                </p>
+                @foreach (explode("\n", $profil->tentangKami->isi ?? '') as $paragraph)
+                    @if (trim($paragraph) != '')
+                        <p>{{ $paragraph }}</p>
+                    @endif
+                @endforeach
             </div>
 
             <div class="flex flex-wrap gap-4 pt-2">
-                <a href="{{route('program')}}"
-                   class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+                <a href="{{ route('program') }}"
+                    class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-green-500 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
                     Lihat Program Kami
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                 </a>
 
                 <a href="#"
-                   class="inline-flex items-center px-6 py-3 text-green-600 font-semibold border-2 border-green-600 rounded-lg hover:bg-green-50 transition-colors duration-300">
+                    class="inline-flex items-center px-6 py-3 text-green-600 font-semibold border-2 border-green-600 rounded-lg hover:bg-green-50 transition-colors duration-300">
                     Kontak Kami
                 </a>
             </div>

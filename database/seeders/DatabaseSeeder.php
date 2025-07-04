@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             KontakSeeder::class,
             DkmProfilSeeder::class,
+            TentangKamiSeeder::class,
         ]);
     }
 }
