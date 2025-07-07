@@ -95,10 +95,10 @@
                 </nav>
 
                 <!-- Sidebar Footer -->
-                <div class="absolute bottom-0 left-0 right-0 p-4 text-center text-xs text-green-200 ">
+                {{-- <div class="absolute bottom-0 left-0 right-0 p-4 text-center text-xs text-green-200 ">
                     <p>DKM Masjid Al-Ikhlash</p>
                     <p class="mt-1">© {{ date('Y') }}</p>
-                </div>
+                </div> --}}
             </aside>
 
             <!-- Content - White Theme -->

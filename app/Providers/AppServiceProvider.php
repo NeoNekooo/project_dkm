@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
   use App\Models\DkmProfil;
+  use App\Models\infaq;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,6 +25,7 @@ class AppServiceProvider extends ServiceProvider
     {
     view()->composer('*', function ($view) {
         $view->with('profil', DkmProfil::with('kontak')->first());
+        $view->with('infaq', Infaq::all());
     });
     }
 
