@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\DkmProfilController;
 use App\Http\Controllers\Admin\TentangKamiController;
 use App\Http\Controllers\Admin\KontakController;
+use App\Http\Controllers\Admin\InfaqController;
 
 
 Route::get('/login', [LoginController::class, 'formLogin']);
@@ -52,6 +53,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/admin/kontak/update', [KontakController::class, 'update'])->name('admin.kontak.update');
     Route::get('/admin/tentang-kami', [TentangKamiController::class, 'index'])->name('admin.tentang.index');
     Route::put('/admin/tentang-kami/update', [TentangKamiController::class, 'update'])->name('admin.tentang.update');
+    Route::get('/admin/infaq', [InfaqController::class, 'index'])->name('admin.infaq.index');
+    Route::put('/admin/infaq/update', [InfaqController::class, 'update'])->name('admin.infaq.update');
 
 
 
@@ -61,7 +64,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 
 
- 
+
 });
 
    Route::post('/logout', function () {

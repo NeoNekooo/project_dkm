@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
             KontakSeeder::class,
             DkmProfilSeeder::class,
             TentangKamiSeeder::class,
+            InfaqSeeder::class,
         ]);
     }
 }
