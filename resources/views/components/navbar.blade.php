@@ -13,6 +13,7 @@
         <a href="{{ route('program') }}" class="hover:text-green-600 transition-colors duration-200">Program</a>
         <a href="{{ route('infaq') }}" class="hover:text-green-600 transition-colors duration-200">Infaq</a>
         <a href="{{ route('event-mesjid') }}" class="hover:text-green-600 transition-colors duration-200">Kegiatan</a>
+        <a href="{{ route('gallery') }}" class="hover:text-green-600 transition-colors duration-200">Gallery</a>
 
         <div class="relative group">
             <!-- Trigger Button -->
@@ -43,7 +44,7 @@
                 <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-accent mr-2">
                     Admin Dashboard
                 </a>
-            
+
             <form method="POST" action="{{ route('logout') }}" class="inline">
                 @csrf
                 <button type="submit" class="btn btn-sm btn-error text-red-700">

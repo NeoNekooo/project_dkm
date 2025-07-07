@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
             DkmProfilSeeder::class,
             TentangKamiSeeder::class,
             InfaqSeeder::class,
+            PostSeeder::class,
         ]);
     }
 }

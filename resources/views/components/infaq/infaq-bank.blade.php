@@ -9,7 +9,7 @@
         <!-- QR Image -->
         <div class="flex justify-center group">
             <div class="relative overflow-hidden rounded-xl shadow-xl border-2 border-green-200 w-full max-w-md">
-                <img src="{{ asset('img/miaw.png') }}" alt="QR Code Donasi"
+                <img src="{{ asset('storage/' . $infaq->picture) }}" alt="QR Code Donasi"
                      class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-gradient-to-t from-green-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>

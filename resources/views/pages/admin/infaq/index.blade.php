@@ -89,7 +89,7 @@
                     @if($infaq->picture)
                         <div class="mt-4">
                             <p class="text-sm text-gray-500 mb-2">Gambar Saat Ini:</p>
-                            <img src="{{ asset('storage/' . $infaq->picture) }}" alt="Current Infaq Image"
+                            <img src="" alt="Current Infaq Image"
                                 class="max-w-xs rounded-lg border border-gray-200">
                         </div>
                     @endif

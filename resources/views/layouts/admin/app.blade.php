@@ -92,6 +92,12 @@
                         <span>Infaq</span>
                         <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
                     </a>
+                    <a href="{{ route('admin.post.index') }}"
+                       class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
+                        <i class="fas fa-coins  w-5"></i>
+                        <span>Post</span>
+                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+                    </a>
                 </nav>
 
                 <!-- Sidebar Footer -->

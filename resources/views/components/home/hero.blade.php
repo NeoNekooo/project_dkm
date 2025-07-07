@@ -17,11 +17,11 @@
                 <div class="w-16 h-1 bg-green-600 rounded-full"></div>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
                 Selamat Datang di <span class="text-green-600">{{ $profil->nama }}</span>
             </h1>
 
-            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p class="text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed">
                 Tempat ibadah yang membawa kedamaian dan keberkahan bagi seluruh umat.
             </p>
         </div>

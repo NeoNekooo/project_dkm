@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\DkmProfilController;
 use App\Http\Controllers\Admin\TentangKamiController;
 use App\Http\Controllers\Admin\KontakController;
 use App\Http\Controllers\Admin\InfaqController;
+use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\BlogController;
 
 
 Route::get('/login', [LoginController::class, 'formLogin']);
@@ -32,9 +34,8 @@ Route::get('/event-mesjid', function () {
     return view('pages.user.event-mesjid');
 })->name('event-mesjid');
 
-Route::get('/blog', function () {
-    return view('pages.user.blog');
-})->name('blog');
+
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
 Route::get('/kontak', function () {
     return view('pages.user.kontak');
@@ -43,6 +44,10 @@ Route::get('/kontak', function () {
 Route::get('/pengumuman', function () {
     return view('pages.user.pengumuman');
 })->name('pengumuman');
+
+Route::get('/gallery', function () {
+    return view('pages.user.gallery');
+})->name('gallery');
 
 
 Route::middleware(['auth', 'admin'])->group(function () {
@@ -55,9 +60,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/admin/tentang-kami/update', [TentangKamiController::class, 'update'])->name('admin.tentang.update');
     Route::get('/admin/infaq', [InfaqController::class, 'index'])->name('admin.infaq.index');
     Route::put('/admin/infaq/update', [InfaqController::class, 'update'])->name('admin.infaq.update');
-
-
-
+    Route::resource('/admin/blog', PostController::class)->names('admin.post');
 
 
 

@@ -9,7 +9,7 @@
         <div class="flex justify-center group">
             <div class="relative overflow-hidden rounded-xl shadow-xl border-2 border-green-200 w-full max-w-md">
                 @if($infaq->picture)
-                    <img src="{{ asset('storage/' . $infaq->picture) }}" alt="QR Code Donasi"
+                    <img src="{{"img/miaw.png"}}" alt="QR Code Donasi"
                          class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
                 @else
                     <img src="{{ asset('img/miaw.png') }}" alt="QR Code Donasi"
