@@ -7,6 +7,9 @@
 
 <x-infaq.hero />
 <x-infaq.infaq-bank />
-<x-infaq.infaq-qris />
+<x-event-mesjid.infaq-bank />
+
+{{-- <x-infaq.infaq-qris /> --}}
+{{-- <x-infaq. /> --}}
 <x-footer-dashboard />
 @endsection

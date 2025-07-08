@@ -8,7 +8,7 @@
         <!-- Section header -->
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-4xl font-bold mb-4">
-                <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">Fasilitas Masjid</span>
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-yellow-400 to-yellow-200">Sarana Masjid</span>
             </h2>
             <div class="w-24 h-1 bg-gradient-to-r from-yellow-500 to-yellow-300 rounded-full mx-auto"></div>
         </div>

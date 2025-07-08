@@ -5,7 +5,7 @@
 @section('content')
 <x-navbar />
 
-<x-program.hero />
 <x-program.programs />
+<x-program.hero />
 <x-footer-dashboard />
 @endsection

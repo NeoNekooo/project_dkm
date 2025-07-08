@@ -21,11 +21,11 @@
         </p>
 
         <div class="flex flex-wrap justify-center gap-4">
-            <a href="#" class="inline-flex items-center px-8 py-3 bg-white hover:bg-gray-50 text-green-700 font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <a href="{{route('infaq')}}" class="inline-flex items-center px-8 py-3 bg-white hover:bg-gray-50 text-green-700 font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <i class="fas fa-hand-holding-heart mr-2"></i>
                 Jadikan Amal Jariyah
             </a>
-            <a href="#" class="inline-flex items-center px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
+            <a href="r{{route('pengumuman')}}" class="inline-flex items-center px-8 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
                 <i class="fas fa-calendar-alt mr-2"></i>
                 Lihat Jadwal Kegiatan
             </a>

@@ -1,6 +1,6 @@
 
 <!-- Section 2: Bank Transfer -->
-<section class="relative bg-white py-24 px-6 overflow-hidden">
+<section id="BankTransfer" class="relative bg-white py-24 px-6 overflow-hidden">
     <!-- Decorative elements -->
     <div class="absolute top-0 left-0 w-64 h-64 bg-green-100 rounded-full blur-[100px] opacity-40"></div>
     <div class="absolute bottom-0 right-0 w-80 h-80 bg-green-50 rounded-full blur-[100px] opacity-40"></div>

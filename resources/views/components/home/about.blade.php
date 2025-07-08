@@ -42,7 +42,7 @@
                     </svg>
                 </a>
 
-                <a href="#"
+                <a href="{{ route('kontak') }}"
                     class="inline-flex items-center px-6 py-3 text-green-600 font-semibold border-2 border-green-600 rounded-lg hover:bg-green-50 transition-colors duration-300">
                     Kontak Kami
                 </a>

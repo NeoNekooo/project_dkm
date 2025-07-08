@@ -1,6 +1,6 @@
 
-<!-- QR Donation Section -->
-<section class="relative bg-white py-24 px-6 overflow-hidden">
+<!-- QR Donation id Section -->
+<section id="Qris" class="relative bg-white py-24 px-6 overflow-hidden">
     <!-- Decorative elements -->
     <div class="absolute top-0 right-0 w-64 h-64 bg-green-100 rounded-full blur-[100px] opacity-40"></div>
     <div class="absolute bottom-0 left-0 w-80 h-80 bg-green-50 rounded-full blur-[100px] opacity-40"></div>
@@ -35,12 +35,7 @@
                 </p>
             </div>
 
-            <div class="pt-4">
-                <a href="#" class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
-                    <i class="fas fa-qrcode mr-2"></i>
-                    Scan QR Sekarang
-                </a>
-            </div>
+            
         </div>
     </div>
 </section>

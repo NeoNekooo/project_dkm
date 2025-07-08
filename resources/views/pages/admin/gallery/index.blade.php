@@ -44,7 +44,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 @foreach($imgs as $item)
                 <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 border border-green-100">
-                    <img src="{{ asset('storage/' . $item->path) }}" alt="{{ $item->name }}" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <img src="{{ asset('storage/' . $item->pathp) }}" alt="{{ $item->name }}" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105">
                     <div class="absolute inset-0 bg-gradient-to-t from-green-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                         <h3 class="text-white font-medium text-lg">{{ $item->name }}</h3>
                         <p class="text-white/80 text-sm">{{ \Carbon\Carbon::parse($item->tanggal)->translatedFormat('d F Y') }}</p>

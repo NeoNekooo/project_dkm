@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html class="scroll-smooth">
 <html lang="id">
 
 <head>

@@ -24,12 +24,12 @@
                 @endforeach
             </div>
 
-            <div class="pt-2">
+            {{-- <div class="pt-2">
                 <a href="#" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-[#0B1A40] font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 group">
                     Lihat Program DKM
                     <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
                 </a>
-            </div>
+            </div> --}}
         </div>
 
         <!-- Portrait -->
