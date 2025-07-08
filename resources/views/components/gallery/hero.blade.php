@@ -22,9 +22,6 @@
 
         <!-- Timeline -->
 <div class="relative">
-    <!-- Timeline line (optional) -->
-    {{-- <div class="absolute left-1/2 h-full w-1 bg-green-200 transform -translate-x-1/2"></div> --}}
-
     <!-- Timeline Item 1 - Image Right -->
     <div class="mb-12 w-full flex flex-col md:flex-row items-center">
         <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0">

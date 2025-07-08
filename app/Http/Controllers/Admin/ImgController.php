@@ -10,7 +10,8 @@ class ImgController extends Controller
 {
     public function index()
     {
-        $imgs = Img::latest()->get();
+        $imgs = Img::latest()->paginate(8); // 8 per halaman
+
         return view('pages.admin.gallery.index', compact('imgs'));
     }
 
@@ -43,4 +44,31 @@ class ImgController extends Controller
         $img->delete();
         return back()->with('success', 'Gambar berhasil dihapus.');
     }
+    public function showTimeline()
+{
+    $imgs = Img::orderBy('tanggal')->get(); // Urutkan berdasarkan waktu
+
+    return view('pages.public.timeline', compact('imgs'));
+}
+
+public function showGallery()
+{
+    $imgs = Img::latest()->get();
+    $categories = $imgs->pluck('tag')->unique()->values();
+
+    $formattedImgs = $imgs->map(function ($img) {
+        return [
+            'id' => $img->id,
+            'name' => $img->name,
+            'tanggal' => \Carbon\Carbon::parse($img->tanggal)->translatedFormat('d F Y'),
+            'tag' => $img->tag,
+            'path' => asset('storage/' . $img->path),
+        ];
+    });
+
+    return view('pages.gallery.index', compact('imgs', 'formattedImgs', 'categories'));
+}
+
+
+
 }

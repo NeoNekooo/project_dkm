@@ -51,6 +51,7 @@ Route::get('/gallery', function () {
     return view('pages.user.gallery');
 })->name('gallery');
 
+Route::get('/sejarah-pembangunan', [ImgController::class, 'showTimeline'])->name('timeline');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
