@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\TentangKamiController;
 use App\Http\Controllers\Admin\KontakController;
 use App\Http\Controllers\Admin\InfaqController;
 use App\Http\Controllers\Admin\PostController;
+use App\Http\Controllers\Admin\ImgController;
 use App\Http\Controllers\BlogController;
 
 
@@ -36,6 +37,7 @@ Route::get('/event-mesjid', function () {
 
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.detail');
 
 Route::get('/kontak', function () {
     return view('pages.user.kontak');
@@ -61,8 +63,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/infaq', [InfaqController::class, 'index'])->name('admin.infaq.index');
     Route::put('/admin/infaq/update', [InfaqController::class, 'update'])->name('admin.infaq.update');
     Route::resource('/admin/blog', PostController::class)->names('admin.post');
-
-
+    Route::resource('/admin/gallery', ImgController::class)->names('admin.gallery');
 
 
 

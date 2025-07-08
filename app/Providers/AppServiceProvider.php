@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
     view()->composer('*', function ($view) {
         $view->with('profil', DkmProfil::with('kontak')->first());
         $view->with('infaq', Infaq::first());
-        $view->with('allPosts', Post::latest()->get());
+        $view->with('posts', Post::latest()->get());
 
     });
     }

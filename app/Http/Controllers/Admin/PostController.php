@@ -30,6 +30,7 @@ class PostController extends Controller
             'excerpt' => 'required|string',
             'body' => 'required|string',
             'thumbnail' => 'nullable|image|max:2048',
+            'kategori' => 'nullable|array',
             'images.*' => 'nullable|image|max:2048',
             'published_at' => 'nullable|date',
             'is_published' => 'nullable|boolean',

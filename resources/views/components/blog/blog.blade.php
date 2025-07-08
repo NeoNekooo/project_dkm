@@ -1,5 +1,5 @@
 <section class="bg-gradient-to-b from-green-50 to-white py-16 px-6">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-6xl mx-auto" x-data="{ showAll: false }">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-green-800 relative inline-block">
                 Berita & Kegiatan Terbaru
@@ -11,8 +11,12 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            @foreach ($posts as $post)
-                <div class="group relative bg-white border border-green-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1 h-full">
+            @foreach ($posts as $index => $post)
+                <div
+                    x-show="showAll || {{ $index }} < 4"
+                    x-transition
+                    class="group relative bg-white border border-green-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1 h-full"
+                >
                     <figure class="overflow-hidden h-48 relative">
                         <img src="{{ asset('storage/' . $post->thumbnail) }}"
                              alt="{{ $post->title }}"
@@ -31,7 +35,7 @@
                                         default => 'bg-gray-100 text-gray-800 border-gray-200',
                                     };
                                 @endphp
-                                <span class="px-2 py-1 rounded-full text-xs font-semibold border {{ $badgeClass }} group-hover:scale-105 transition-transform">
+                                <span class="px-2 py-1 rounded-full text-xs font-semibold border {{ $badgeClass }}">
                                     {{ $tag }}
                                 </span>
                             @endforeach
@@ -56,11 +60,16 @@
             @endforeach
         </div>
 
+        <!-- Tombol Lihat Semua -->
         <div class="mt-12 text-center">
-            <a href="{{ route('blog') }}" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-teal-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+            <button
+                x-show="!showAll"
+                @click="showAll = true"
+                class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-green-600 to-teal-500 text-white font-medium rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02]"
+            >
                 Lihat Semua Berita
                 <i class="fas fa-arrow-right ml-2"></i>
-            </a>
+            </button>
         </div>
     </div>
 </section>

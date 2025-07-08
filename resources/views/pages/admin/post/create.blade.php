@@ -3,6 +3,17 @@
 @section('title', 'Buat Postingan Baru')
 
 @section('content')
+<script src="https://cdn.tiny.cloud/1/so6svm2f5nsu2aero1koqx9638nbare61kxc663hdhv0dkgx/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: 'textarea#body',
+        plugins: 'lists link image code',
+        toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright | bullist numlist | link image | code',
+        height: 400,
+        menubar: false
+    });
+</script>
+
 <div class="max-w-3xl mx-auto">
     <h2 class="text-2xl font-bold text-gray-800 mb-6">Buat Postingan Blog Baru</h2>
 
@@ -39,8 +50,9 @@
 
         <!-- Konten -->
         <div>
-            <label class="block text-sm font-medium text-gray-700">Isi Konten</label>
-            <textarea name="body" rows="6" class="w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" required></textarea>
+            <label for="body" class="block font-medium text-sm text-gray-700">Isi Konten</label>
+            <textarea name="body" id="body" class="form-control mt-1 block w-full" rows="10">{{ old('body', $post->body ?? '') }}</textarea>
+
         </div>
 
         <!-- Gambar -->
