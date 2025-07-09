@@ -1,26 +1,3 @@
-<?php
-$events = [
-    [
-        'title' => 'Kajian Spesial Subuh',
-        'date' => '2025-07-06',
-        'location' => 'Masjid Al-Ikhlash',
-        'description' => 'Kajian bersama Ustadz Hanan Attaki. Ajak keluarga dan teman!',
-    ],
-    [
-        'title' => 'Santunan Anak Yatim',
-        'date' => '2025-07-07',
-        'location' => 'Aula Serbaguna',
-        'description' => 'Penyaluran dana infaq untuk anak yatim binaan.',
-    ],
-    [
-        'title' => 'Pelatihan Pemulasaraan Jenazah',
-        'date' => '2025-07-13',
-        'location' => 'Ruang Serbaguna Masjid',
-        'description' => 'Pelatihan praktis dan teoritis untuk umum.',
-    ],
-];
-
-?>
 <section class="bg-gradient-to-b from-green-50 to-white py-16 px-6">
     <div class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
@@ -32,11 +9,11 @@ $events = [
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            @foreach ($events as $event)
+            @foreach ($kegiatans as $kegiatan)
                 <div class="group relative bg-white border border-green-100 rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden hover:-translate-y-1 h-full">
                     <!-- Date ribbon -->
                     <div class="absolute top-4 right-4 bg-green-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">
-                        {{ \Carbon\Carbon::parse($event['date'])->format('d M') }}
+                        {{ \Carbon\Carbon::parse($kegiatan['date'])->format('d M') }}
                     </div>
 
                     <div class="p-6 flex flex-col h-full">
@@ -46,31 +23,23 @@ $events = [
                                 <i class="fas fa-calendar-alt text-green-600"></i>
                             </div>
                             <span class="text-sm font-medium">
-                                {{ \Carbon\Carbon::parse($event['date'])->translatedFormat('l, F Y') }}
+                                {{ \Carbon\Carbon::parse($kegiatan['date'])->translatedFormat('l, F Y') }}
                             </span>
                         </div>
 
                         <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-700 transition-colors">
-                            {{ $event['title'] }}
+                            {{ $kegiatan['judul'] }}
                         </h3>
 
                         <p class="text-gray-600 text-sm mb-4 line-clamp-2">
-                            {{ $event['description'] }}
+                            {{ $kegiatan['isi'] }}
                         </p>
 
                         <div class="flex items-center gap-3 text-sm text-gray-500 mt-auto">
                             <div class="p-2 bg-gray-100 rounded-full">
                                 <i class="fas fa-map-marker-alt text-gray-600"></i>
                             </div>
-                            <span>{{ $event['location'] }}</span>
-                        </div>
-
-                        <!-- Action button -->
-                        <div class="mt-6 pt-4 border-t border-gray-100">
-                            <a href="#" class="inline-flex items-center px-4 py-2 text-sm font-medium text-green-600 hover:text-white border border-green-600 rounded-lg hover:bg-gradient-to-r from-green-600 to-teal-500 transition-all duration-300">
-                                View Details
-                                <i class="fas fa-arrow-right ml-2 text-xs transition-transform group-hover:translate-x-1"></i>
-                            </a>
+                            <span>{{ $kegiatan['lokasi'] }}</span>
                         </div>
                     </div>
                 </div>

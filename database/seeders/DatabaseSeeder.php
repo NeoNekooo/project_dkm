@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             TentangKamiSeeder::class,
             InfaqSeeder::class,
             PostSeeder::class,
+            KegiatanSeeder::class,
         ]);
     }
 }

@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\KontakController;
 use App\Http\Controllers\Admin\InfaqController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImgController;
+use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\BlogController;
 
 
@@ -65,6 +66,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/admin/infaq/update', [InfaqController::class, 'update'])->name('admin.infaq.update');
     Route::resource('/admin/blog', PostController::class)->names('admin.post');
     Route::resource('/admin/gallery', ImgController::class)->names('admin.gallery');
+    Route::resource('kegiatan', KegiatanController::class);
 
 
 

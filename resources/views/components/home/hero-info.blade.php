@@ -62,7 +62,7 @@
 
         <!-- View all button -->
         <div class="mt-16 text-center">
-            <a href="#" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-[#0B1A40] font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
+            <a href="{{ route('gallery') }}" class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-500 to-yellow-400 text-[#0B1A40] font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02]">
                 Lihat Semua Fasilitas
                 <i class="fas fa-arrow-right ml-3"></i>
             </a>
