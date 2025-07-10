@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Http\Controllers;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\AdminDashboardController;
@@ -10,11 +12,14 @@ use App\Http\Controllers\Admin\InfaqController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImgController;
 use App\Http\Controllers\Admin\KegiatanController;
+use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\BlogController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 
-Route::get('/login', [LoginController::class, 'formLogin']);
-Route::post('/login', [LoginController::class, 'loginAction'])->name('login.action');
+Route::get('/login', [LoginController::class, 'formLogin'])->name('login');
+Route::post('/login', [LoginController::class, 'loginAction'])->name('login.action')->middleware('throttle:5,1');
 
 Route::get('/', function () {
     return view('pages.user.home');
@@ -48,9 +53,7 @@ Route::get('/pengumuman', function () {
     return view('pages.user.pengumuman');
 })->name('pengumuman');
 
-Route::get('/gallery', function () {
-    return view('pages.user.gallery');
-})->name('gallery');
+Route::get('/gallery', [ImgController::class, 'showGallery'])->name('gallery');
 
 Route::get('/sejarah-pembangunan', [ImgController::class, 'showTimeline'])->name('timeline');
 
@@ -64,7 +67,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/admin/tentang-kami/update', [TentangKamiController::class, 'update'])->name('admin.tentang.update');
     Route::get('/admin/infaq', [InfaqController::class, 'index'])->name('admin.infaq.index');
     Route::put('/admin/infaq/update', [InfaqController::class, 'update'])->name('admin.infaq.update');
-    Route::resource('/admin/blog', PostController::class)->names('admin.post');
+    Route::resource('/admin/blog', PostController::class)
+    ->names('admin.post')
+    ->parameters(['blog' => 'post']);
+
     Route::prefix('admin/gallery')->name('admin.gallery.')->middleware(['auth'])->group(function () {
         Route::get('/', [ImgController::class, 'index'])->name('index');
         Route::get('/create', [ImgController::class, 'create'])->name('create');
@@ -73,7 +79,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::put('/{img}', [ImgController::class, 'update'])->name('update');
         Route::delete('/{img}', [ImgController::class, 'destroy'])->name('destroy');
     });
-
+    Route::resource('/admin/program', ProgramController::class)->names('admin.program');
     Route::resource('/admin/kegiatan', KegiatanController::class);
 
 
@@ -82,9 +88,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 });
 
-   Route::post('/logout', function () {
+Route::post('/logout', function (Request $request) {
     Auth::logout();
-    request()->session()->invalidate();
-    request()->session()->regenerateToken();
-    return redirect('/');
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+    return redirect('/login')->with('success', 'Anda telah keluar.');
 })->name('logout');

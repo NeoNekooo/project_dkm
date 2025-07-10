@@ -7,5 +7,6 @@
 
 <x-program.programs />
 <x-program.hero />
+<x-program.programAmalan />
 <x-footer-dashboard />
 @endsection

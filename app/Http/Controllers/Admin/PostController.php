@@ -27,7 +27,7 @@ class PostController extends Controller
         $data = $request->validate([
             'title' => 'required|string|max:255',
             'slug' => 'nullable|string|max:255',
-            'excerpt' => 'required|string',
+            'excerpt' => 'nullable|string',
             'body' => 'required|string',
             'thumbnail' => 'nullable|image|max:2048',
             'kategori' => 'nullable|array',
@@ -69,7 +69,7 @@ class PostController extends Controller
     {
         $data = $request->validate([
             'title' => 'required|string|max:255',
-            'content' => 'required',
+            'body' => 'required',
             'thumbnail' => 'nullable|image|max:2048',
             'images.*' => 'nullable|image|max:2048',
         ]);

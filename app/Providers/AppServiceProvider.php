@@ -35,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('allImgs', Img::latest()->get());
             $view->with('kegiatans', Kegiatan::orderBy('tanggal', 'asc')->take(6)->get());
             $view->with('tags', Img::pluck('tag')->unique()->values());
+            $view->with('programs', \App\Models\Program::all());
         });
      }
 

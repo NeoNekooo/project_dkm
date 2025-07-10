@@ -44,12 +44,11 @@
                     Admin Dashboard
                 </a>
 
-                <form method="POST" action="{{ route('logout') }}" class="inline">
+                <form action="{{ route('logout') }}" method="POST">
                     @csrf
-                    <button type="submit" class="btn btn-sm btn-error text-red-700">
-                        Logout
-                    </button>
+                    <button type="submit" class="text-red-500 hover:underline">Logout</button>
                 </form>
+
             @endif
         @endauth
     </div>

@@ -30,7 +30,7 @@
                 <div class="flex items-center">
                     <img src="{{ asset('storage/' . $profil->logo) }}" alt="Logo" class="h-8 mr-2">
 
-                    <span class="text-xl font-bold text-gray-800">{{ env('APP_NAME') }}</span>
+                    <span class="text-xl font-bold text-gray-800">{{ $profil->nama }}</span>
                 </div>
             </div>
 
@@ -97,14 +97,20 @@
                     </a>
                     <a href="{{ route('admin.post.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
-                        <i class="fas fa-paper  w-5"></i>
+                        <i class="fas fa-pencil  w-5"></i>
                         <span>Post</span>
                         <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
                     </a>
                     <a href="{{ route('admin.gallery.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
-                        <i class="fas fa-albums  w-5"></i>
+                        <i class="fas fa-image  w-5"></i>
                         <span>Gallery</span>
+                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+                    </a>
+                    <a href="{{ route('admin.program.index') }}"
+                       class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
+                        <i class="fas fa-person-running  w-5"></i>
+                        <span>Program</span>
                         <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
                     </a>
                 </nav>

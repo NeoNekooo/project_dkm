@@ -1,31 +1,3 @@
-@php
-    $programs = [
-        [
-            'title' => 'Pembangunan',
-            'desc' => 'Renovasi dan pembangunan fasilitas ibadah secara berkelanjutan.',
-            'icon' => 'fa-building',
-            'color' => 'bg-yellow-100 text-yellow-700 border-yellow-200',
-        ],
-        [
-            'title' => 'Dakwah',
-            'desc' => 'Kajian rutin, ceramah, dan kegiatan syiar Islam.',
-            'icon' => 'fa-mosque',
-            'color' => 'bg-green-100 text-green-700 border-green-200',
-        ],
-        [
-            'title' => 'Sosial',
-            'desc' => 'Santunan anak yatim, bantuan sembako, dan bakti masyarakat.',
-            'icon' => 'fa-hands-helping',
-            'color' => 'bg-blue-100 text-blue-700 border-blue-200',
-        ],
-        [
-            'title' => 'ZIS',
-            'desc' => 'Pengelolaan Zakat, Infaq, dan Shodaqoh secara transparan.',
-            'icon' => 'fa-coins',
-            'color' => 'bg-purple-100 text-purple-700 border-purple-200',
-        ],
-    ];
-@endphp
 
 <!-- Programs Grid Section -->
 <section class="relative bg-gradient-to-b from-white to-green-50 py-24 px-6 overflow-hidden">
@@ -42,7 +14,7 @@
                 <div class="w-12 h-1 bg-green-600 rounded-full"></div>
             </div>
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-                Kegiatan Masjid Al-Ikhlash
+                Kegiatan {{ $profil->nama }}
             </h2>
             <p class="text-lg text-gray-600 max-w-2xl mx-auto">
                 Berbagai program untuk memakmurkan masjid dan membina umat

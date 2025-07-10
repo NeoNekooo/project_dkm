@@ -21,7 +21,7 @@
         <thead class="bg-gray-100 text-gray-600">
             <tr>
                 <th class="px-6 py-3 text-left font-medium">Judul</th>
-                <th class="px-6 py-3 text-left font-medium">Slug</th>
+                <th class="px-6 py-3 text-left font-medium">Photo</th>
                 <th class="px-6 py-3 text-left font-medium">Publish</th>
                 <th class="px-6 py-3 text-center font-medium">Aksi</th>
             </tr>
@@ -30,7 +30,13 @@
             @forelse($posts as $post)
                 <tr>
                     <td class="px-6 py-4">{{ $post->title }}</td>
-                    <td class="px-6 py-4 text-gray-500">{{ $post->slug }}</td>
+                    <td class="px-6 py-4">
+                        @if ($post->thumbnail)
+                            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Thumbnail" class="h-16 w-16 object-cover rounded shadow">
+                        @else
+                            <span class="text-gray-500">Tidak ada thumbnail</span>
+                        @endif
+                    </td>
                     <td class="px-6 py-4">{{ $post->published_at ? \Carbon\Carbon::parse($post->published_at)->translatedFormat('d M Y') : '-' }}</td>
                     <td class="px-6 py-4 text-center space-x-2">
                         <a href="{{ route('admin.post.edit', $post->id) }}"
