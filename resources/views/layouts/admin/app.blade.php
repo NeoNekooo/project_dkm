@@ -1,4 +1,4 @@
-<!DOCTYPE html class="scroll-smooth">
+<!DOCTYPE html class="scroll-smooth" x-cloak>
 <html lang="id">
 
 <head>
@@ -7,6 +7,9 @@
     <title>{{ env('APP_NAME') }} | @yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/e686fa0059.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
         body {
@@ -59,7 +62,7 @@
                     <p class="text-sm font-medium">{{ Auth::user()->name ?? 'User' }}</p>
                     <p class="text-xs text-green-200 mt-1">Administrator</p>
                 </div>
-
+                <div x-data="{ test: 'Hello' }" x-init="console.log(test)"></div>
                 <!-- Navigation -->
                 <nav class="space-y-1">
                     <a href="{{ route('admin.dashboard')}}"
@@ -148,7 +151,7 @@
             const sidebar = document.getElementById('sidebar');
             sidebar.classList.toggle('hidden');
         });
-    </script>
+        </script>
 </body>
 
 </html>

@@ -65,8 +65,16 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin/infaq', [InfaqController::class, 'index'])->name('admin.infaq.index');
     Route::put('/admin/infaq/update', [InfaqController::class, 'update'])->name('admin.infaq.update');
     Route::resource('/admin/blog', PostController::class)->names('admin.post');
-    Route::resource('/admin/gallery', ImgController::class)->names('admin.gallery');
-    Route::resource('kegiatan', KegiatanController::class);
+    Route::prefix('admin/gallery')->name('admin.gallery.')->middleware(['auth'])->group(function () {
+        Route::get('/', [ImgController::class, 'index'])->name('index');
+        Route::get('/create', [ImgController::class, 'create'])->name('create');
+        Route::post('/', [ImgController::class, 'store'])->name('store');
+        Route::get('/{img}/edit', [ImgController::class, 'edit'])->name('edit');
+        Route::put('/{img}', [ImgController::class, 'update'])->name('update');
+        Route::delete('/{img}', [ImgController::class, 'destroy'])->name('destroy');
+    });
+
+    Route::resource('/admin/kegiatan', KegiatanController::class);
 
 
 

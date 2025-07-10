@@ -9,7 +9,7 @@ use Illuminate\Support\ServiceProvider;
   use App\Models\Img;
   use App\Models\Kegiatan;
 
-
+  use Illuminate\Pagination\Paginator;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -25,15 +25,18 @@ class AppServiceProvider extends ServiceProvider
      */
 
 
-    public function boot()
-    {
-    view()->composer('*', function ($view) {
-        $view->with('profil', DkmProfil::with('kontak')->first());
-        $view->with('infaq', Infaq::first());
-        $view->with('posts', Post::latest()->get());
-        $view->with('imgs', Img::latest()->get());
-        $view->with('kegiatans', Kegiatan::orderBy('tanggal', 'asc')->take(6)->get());
-    });
-    }
+     public function boot()
+     {
+         Paginator::useTailwind();
+         view()->composer('*', function ($view) {
+            $view->with('profil', DkmProfil::with('kontak')->first());
+            $view->with('infaq', Infaq::first());
+            $view->with('posts', Post::latest()->get());
+            $view->with('allImgs', Img::latest()->get());
+            $view->with('kegiatans', Kegiatan::orderBy('tanggal', 'asc')->take(6)->get());
+            $view->with('tags', Img::pluck('tag')->unique()->values());
+        });
+     }
+
 
 }
