@@ -34,10 +34,8 @@
                 <i class="fas fa-calendar-check text-green-300 mr-2"></i> Program
             </h4>
             <ul class="space-y-3 text-sm text-green-100">
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Kajian Rutin</a></li>
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> TPA/TPQ</a></li>
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Bantuan Sosial</a></li>
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Kegiatan Ramadhan</a></li>
+                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Program Kami</a></li>
+                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Program Ramadhan</a></li>
             </ul>
         </div>
 
