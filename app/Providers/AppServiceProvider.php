@@ -44,6 +44,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('tags', Img::pluck('tag')->unique()->values());
             $view->with('programs', Program::all());
             $view->with('pembangunans', Pembangunan::orderBy('urutan')->get()) ;
+            $view->with('user', auth()->user());
 
         });
         }

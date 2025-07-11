@@ -72,7 +72,8 @@
                 <!-- User Profile -->
                 <div class="flex flex-col items-center mb-8">
                     <div class="relative mb-3">
-                        <img src="https://i.pinimg.com/736x/f4/60/a3/f460a3a083bf32447cd0ffb2f6bd646d.jpg"
+                        <img
+                         src="{{ $user->photo ? asset('storage/' . $user->photo) : 'https://ui-avatars.com/api/?name=' . urlencode($user->name) }}"
                             class="w-16 h-16 rounded-full border-2 border-green-300 shadow" alt="User Photo">
 
                     </div>
@@ -126,7 +127,7 @@
                     </a>
                     <a href="{{ route('admin.kegiatan.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
-                        <i class="fas fa-work  w-5"></i>
+                        <i class="fas fa-calendar  w-5"></i>
                         <span>Kegiatan</span>
 
                     </a>
@@ -138,13 +139,13 @@
                     </a>
                     <a href="{{ route('admin.pembangunan.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
-                        <i class="fas fa-person-running  w-5"></i>
+                        <i class="fas fa-mosque  w-5"></i>
                         <span>Pembangunan</span>
 
                     </a>
                     <a href="{{ route('admin.settings.edit') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
-                        <i class="fas fa-person  w-5"></i>
+                        <i class="fas fa-gear  w-5"></i>
                         <span>Settings</span>
 
                     </a>
