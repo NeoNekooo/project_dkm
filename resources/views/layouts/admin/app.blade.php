@@ -21,29 +21,46 @@
 <body class="bg-gray-50">
     <div class="min-h-screen flex flex-col">
 
-        <!-- Navbar -->
-        <nav class="bg-white shadow-md py-3 px-6 flex justify-between items-center sticky top-0 z-50">
-            <div class="flex items-center gap-4">
-                <button class="text-gray-600 md:hidden focus:outline-none" id="sidebarToggle">
-                    <i class="fas fa-bars text-xl"></i>
+        <nav class="bg-white shadow-md py-3 px-6 flex justify-between items-center sticky top-0 z-50 w-full">
+            <!-- Left Section -->
+            <div class="flex items-center space-x-4">
+                <!-- Mobile Menu Button (hidden on larger screens) -->
+                <button
+                    id="sidebarToggle"
+                    class="text-gray-600 hover:text-gray-900 md:hidden focus:outline-none focus:ring-2 focus:ring-green-500 rounded p-1 transition-colors"
+                    aria-label="Toggle menu"
+                    aria-expanded="false"
+                >
+                    <i class="fas fa-bars text-xl w-6 h-6 flex items-center justify-center"></i>
                 </button>
-                <div class="flex items-center">
-                    <img src="{{ asset('storage/' . $profil->logo) }}" alt="Logo" class="h-8 mr-2">
 
-                    <span class="text-xl font-bold text-gray-800">{{ $profil->nama }}</span>
-                </div>
+                <!-- Logo/Brand -->
+                <a href="{{ url('/') }}" class="flex items-center group">
+                    <img
+                        src="{{ asset('storage/' . $profil->logo) }}"
+                        alt="{{ $profil->nama }} Logo"
+                        class="h-8 w-auto mr-2 transition-transform group-hover:scale-105"
+                    >
+                    <span class="text-xl font-bold text-gray-800 group-hover:text-green-600 transition-colors">
+                        {{ $profil->nama }}
+                    </span>
+                </a>
             </div>
 
-            <div class="flex items-center gap-4">
-                <a href="{{ url('/') }}" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                    <i class="fas fa-home mr-1"></i> Beranda
+            <!-- Right Section -->
+            <div class="flex items-center space-x-3">
+                <!-- Home Button -->
+                <a
+                    href="{{ url('/') }}"
+                    class="flex items-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                    aria-label="Go to homepage"
+                >
+                    <i class="fas fa-home mr-2"></i>
+                    <span class="hidden sm:inline">Beranda</span>
                 </a>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200">
-                        <i class="fas fa-sign-out-alt mr-1"></i> Logout
-                    </button>
-                </form>
+
+                <!-- Logout Button -->
+
             </div>
         </nav>
 
@@ -69,56 +86,79 @@
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-tachometer-alt w-5"></i>
                         <span>Dashboard</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
                     <a href="{{ route('admin.profil.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-user-circle w-5"></i>
                         <span>Kelola Profil</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
                     <a href="{{ route('admin.kontak.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-address-book w-5"></i>
                         <span>Kelola Kontak</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
                     <a href="{{ route('admin.tentang.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-info-circle w-5"></i>
                         <span>Tentang Kami</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
                     <a href="{{ route('admin.infaq.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-coins  w-5"></i>
                         <span>Infaq</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
                     <a href="{{ route('admin.post.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-pencil  w-5"></i>
                         <span>Post</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
                     <a href="{{ route('admin.gallery.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-image  w-5"></i>
                         <span>Gallery</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
                     <a href="{{ route('admin.kegiatan.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-work  w-5"></i>
                         <span>Kegiatan</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
                     <a href="{{ route('admin.program.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-person-running  w-5"></i>
                         <span>Program</span>
-                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+
                     </a>
+                    <a href="{{ route('admin.pembangunan.index') }}"
+                       class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
+                        <i class="fas fa-person-running  w-5"></i>
+                        <span>Pembangunan</span>
+
+                    </a>
+                    <a href="{{ route('admin.settings.edit') }}"
+                       class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
+                        <i class="fas fa-person  w-5"></i>
+                        <span>Settings</span>
+
+                    </a>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button
+                            type="submit"
+                            class="flex items-center gap-3 mt-8 py-3 bg-red-500 hover:bg-red-600 text-white px-4 rounded-lg text-sm font-medium transition-all duration-200 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                            aria-label="Logout"
+                        >
+                            <i class="fas fa-sign-out-alt mr-2"></i>
+                            <span class="hidden sm:inline">Logout</span>
+                        </button>
+                    </form>
                 </nav>
 
                 <!-- Sidebar Footer -->

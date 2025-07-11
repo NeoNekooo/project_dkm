@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\ImgController;
 use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\ProgramController;
+use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -82,6 +83,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('/admin/program', ProgramController::class)->names('admin.program');
     Route::resource('/admin/kegiatan', KegiatanController::class)->names('admin.kegiatan');
     Route::patch('/admin/kegiatan/{kegiatan}/toggle', [KegiatanController::class, 'toggleStatus'])->name('admin.kegiatan.toggle');
+     Route::resource('pembangunan', PembangunanController::class)->names('admin.pembangunan');
+     Route::get('/admin/settings', [SettingsController::class, 'edit'])->name('admin.settings.edit');
+     Route::patch('/admin/settings', [SettingsController::class, 'update'])->name('admin.settings.update');
 
 
 

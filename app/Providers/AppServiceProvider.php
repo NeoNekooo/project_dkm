@@ -9,6 +9,7 @@ use Illuminate\Support\ServiceProvider;
   use App\Models\Img;
   use App\Models\Kegiatan;
 use App\Models\Program;
+use App\Models\Pembangunan;
 use Illuminate\Support\Facades\View;
 
   use Illuminate\Pagination\Paginator;
@@ -42,6 +43,8 @@ class AppServiceProvider extends ServiceProvider
                 ->get());
             $view->with('tags', Img::pluck('tag')->unique()->values());
             $view->with('programs', Program::all());
+            $view->with('pembangunans', Pembangunan::orderBy('urutan')->get()) ;
+
         });
         }
 
