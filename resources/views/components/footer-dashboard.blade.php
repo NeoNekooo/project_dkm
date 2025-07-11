@@ -20,11 +20,11 @@
                 <i class="fas fa-link text-green-300 mr-2"></i> Tautan Cepat
             </h4>
             <ul class="space-y-3 text-sm text-green-100">
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Beranda</a></li>
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Tentang Kami</a></li>
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Program</a></li>
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Infaq</a></li>
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Kontak</a></li>
+                <li><a href="/" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Beranda</a></li>
+                <li><a href="{{ route('tentang') }}" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Tentang Kami</a></li>
+                <li><a href="{{ route('program') }}" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Program</a></li>
+                <li><a href="{{ route('infaq') }}" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Infaq</a></li>
+                <li><a href="{{ route('kontak') }}" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Kontak</a></li>
             </ul>
         </div>
 
