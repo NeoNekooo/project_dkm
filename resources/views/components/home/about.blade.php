@@ -6,7 +6,7 @@
     <div class="relative z-10 max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
         <!-- Image with hover effect -->
         <div class="group relative overflow-hidden rounded-2xl shadow-xl">
-            <img src="https://i.pinimg.com/736x/60/e5/42/60e542e5a1d1d17bbacd7b1a44594bb3.jpg" alt="Tentang Masjid"
+            <img src="{{ asset('storage/' . $profil->tentangKami->foto_masjid) }}" alt="Tentang Masjid"
                 class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
             <div
                 class="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
