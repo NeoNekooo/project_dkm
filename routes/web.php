@@ -14,10 +14,13 @@ use App\Http\Controllers\Admin\ImgController;
 use App\Http\Controllers\Admin\KegiatanController;
 use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\SettingsController;
+use App\Http\Controllers\Admin\ProgramRamadhanController;
+use App\Http\Controllers\Admin\AmalanController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AmalanUserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\Admin\PembangunanController;
 
 Route::get('/login', [LoginController::class, 'formLogin'])->name('login');
 Route::post('/login', [LoginController::class, 'loginAction'])->name('login.action')->middleware('throttle:5,1');
@@ -42,6 +45,7 @@ Route::get('/event-mesjid', function () {
     return view('pages.user.event-mesjid');
 })->name('event-mesjid');
 
+Route::get('/amalan', [AmalanUserController::class, 'index'])->name('user.amalan.index');
 
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.detail');
@@ -58,21 +62,27 @@ Route::get('/gallery', [ImgController::class, 'showGallery'])->name('gallery');
 
 Route::get('/sejarah-pembangunan', [ImgController::class, 'showTimeline'])->name('timeline');
 
-Route::middleware(['auth', 'admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminDashboardController::class, 'index'])->name('admin.dashboard');
-    Route::get('/admin/profil', [DkmProfilController::class, 'index'])->name('admin.profil.index');
-    Route::put('/admin/profil', [DkmProfilController::class, 'update'])->name('admin.profil.update');
-    Route::get('/admin/kontak', [KontakController::class, 'index'])->name('admin.kontak.index');
-    Route::put('/admin/kontak/update', [KontakController::class, 'update'])->name('admin.kontak.update');
-    Route::get('/admin/tentang-kami', [TentangKamiController::class, 'index'])->name('admin.tentang.index');
-    Route::put('/admin/tentang-kami/update', [TentangKamiController::class, 'update'])->name('admin.tentang.update');
-    Route::get('/admin/infaq', [InfaqController::class, 'index'])->name('admin.infaq.index');
-    Route::put('/admin/infaq/update', [InfaqController::class, 'update'])->name('admin.infaq.update');
-    Route::resource('/admin/blog', PostController::class)
-    ->names('admin.post')
-    ->parameters(['blog' => 'post']);
+Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
 
-    Route::prefix('admin/gallery')->name('admin.gallery.')->middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/profil', [DkmProfilController::class, 'index'])->name('profil.index');
+    Route::put('/profil', [DkmProfilController::class, 'update'])->name('profil.update');
+
+    Route::get('/kontak', [KontakController::class, 'index'])->name('kontak.index');
+    Route::put('/kontak/update', [KontakController::class, 'update'])->name('kontak.update');
+
+    Route::get('/tentang-kami', [TentangKamiController::class, 'index'])->name('tentang.index');
+    Route::put('/tentang-kami/update', [TentangKamiController::class, 'update'])->name('tentang.update');
+
+    Route::get('/infaq', [InfaqController::class, 'index'])->name('infaq.index');
+    Route::put('/infaq/update', [InfaqController::class, 'update'])->name('infaq.update');
+
+    Route::resource('blog', PostController::class)
+        ->names('post')
+        ->parameters(['blog' => 'post']);
+
+    Route::prefix('gallery')->name('gallery.')->group(function () {
         Route::get('/', [ImgController::class, 'index'])->name('index');
         Route::get('/create', [ImgController::class, 'create'])->name('create');
         Route::post('/', [ImgController::class, 'store'])->name('store');
@@ -80,18 +90,24 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::put('/{img}', [ImgController::class, 'update'])->name('update');
         Route::delete('/{img}', [ImgController::class, 'destroy'])->name('destroy');
     });
-    Route::resource('/admin/program', ProgramController::class)->names('admin.program');
-    Route::resource('/admin/kegiatan', KegiatanController::class)->names('admin.kegiatan');
-    Route::patch('/admin/kegiatan/{kegiatan}/toggle', [KegiatanController::class, 'toggleStatus'])->name('admin.kegiatan.toggle');
-     Route::resource('pembangunan', PembangunanController::class)->names('admin.pembangunan');
-     Route::get('/admin/settings', [SettingsController::class, 'edit'])->name('admin.settings.edit');
-     Route::patch('/admin/settings', [SettingsController::class, 'update'])->name('admin.settings.update');
 
+    Route::resource('program', ProgramController::class)->names('program');
 
+    Route::resource('kegiatan', KegiatanController::class)->names('kegiatan');
+    Route::patch('/kegiatan/{kegiatan}/toggle', [KegiatanController::class, 'toggleStatus'])->name('kegiatan.toggle');
 
+    Route::resource('pembangunan', PembangunanController::class)->names('pembangunan');
 
+    Route::get('/settings', [SettingsController::class, 'edit'])->name('settings.edit');
+    Route::patch('/settings', [SettingsController::class, 'update'])->name('settings.update');
 
-
+    Route::get('/amalans', [AmalanController::class, 'index'])->name('amalans.index');
+    Route::get('/amalans/create', [AmalanController::class, 'create'])->name('amalans.create');
+    Route::post('/amalans', [AmalanController::class, 'store'])->name('amalans.store');
+    Route::get('/amalans/{amalan}', [AmalanController::class, 'show'])->name('amalans.show');
+    Route::get('/amalans/{amalan}/edit', [AmalanController::class, 'edit'])->name('amalans.edit');
+    Route::put('/amalans/{amalan}', [AmalanController::class, 'update'])->name('amalans.update');
+    Route::delete('/amalans/{amalan}', [AmalanController::class, 'destroy'])->name('amalans.destroy');
 
 });
 

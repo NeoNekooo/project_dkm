@@ -20,6 +20,10 @@ class DkmProfil extends Model
         'background',
         'luas_tanah',
         'tahun_berdiri',
+        'ig',
+        'fb',
+        'yt',
+        'wa',
     ];
 
     

@@ -21,6 +21,10 @@ return new class extends Migration {
             $table->timestamps();
             $table->string('luas_tanah')->nullable();
             $table->string('tahun_berdiri')->nullable();
+            $table->string('ig')->nullable();
+            $table->string('fb')->nullable();
+            $table->string('wa')->nullable();
+            $table->string('yt')->nullable();
         });
     }
 

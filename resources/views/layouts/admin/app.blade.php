@@ -141,7 +141,11 @@
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-mosque  w-5"></i>
                         <span>Pembangunan</span>
-
+                    </a>
+                     <a href="{{ route('admin.amalans.index') }}"
+                       class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
+                        <i class="fas fa-mosque  w-5"></i>
+                        <span>Amalan Ramadhan</span>
                     </a>
                     <a href="{{ route('admin.settings.edit') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">

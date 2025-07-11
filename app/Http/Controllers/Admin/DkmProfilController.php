@@ -31,6 +31,10 @@ class DkmProfilController extends Controller
             'background' => $request->hasFile('background') ? $request->file('background')->store('background', 'public') : $profil->background,
             'luas_tanah' => $request->luas_tanah,
             'tahun_berdiri' => $request->tahun_berdiri,
+            'ig' => $request->ig,
+            'fb' => $request->fb,
+            'yt' => $request->yt,
+            'wa' => $request->wa,
 
         ]);
 
