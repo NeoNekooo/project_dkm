@@ -10,8 +10,8 @@ class KegiatanController extends Controller
 {
     public function index()
     {
-        $kegiatan = Kegiatan::latest()->get();
-        return view('pages.admin.kegiatan.index', compact('kegiatan'));
+        $kegiatans = Kegiatan::latest()->get();
+        return view('pages.admin.kegiatan.index', compact('kegiatans'));
     }
 
     public function create()
@@ -22,10 +22,11 @@ class KegiatanController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'judul' => 'required|string|max:255',
-            'isi' => 'required|string',
-            'lokasi' => 'required|string|max:255',
+            'judul'   => 'required|string|max:255',
+            'isi'     => 'required|string',
+            'lokasi'  => 'required|string|max:255',
             'tanggal' => 'nullable|date',
+            'status'  => 'boolean',
         ]);
 
         Kegiatan::create($data);
@@ -41,15 +42,24 @@ class KegiatanController extends Controller
     public function update(Request $request, Kegiatan $kegiatan)
     {
         $data = $request->validate([
-            'judul' => 'required|string|max:255',
-            'isi' => 'required|string',
-            'lokasi' => 'required|string|max:255',
+            'judul'   => 'required|string|max:255',
+            'isi'     => 'required|string',
+            'lokasi'  => 'required|string|max:255',
             'tanggal' => 'nullable|date',
+            'status'  => 'boolean',
         ]);
 
         $kegiatan->update($data);
 
         return redirect()->route('admin.kegiatan.index')->with('success', 'Kegiatan berhasil diperbarui.');
+    }
+
+    public function toggleStatus(Kegiatan $kegiatan)
+    {
+        $kegiatan->status = !$kegiatan->status;
+        $kegiatan->save();
+
+        return redirect()->back()->with('success', 'Status kegiatan berhasil diperbarui.');
     }
 
     public function destroy(Kegiatan $kegiatan)
@@ -59,9 +69,12 @@ class KegiatanController extends Controller
     }
 
     public function showKegiatan()
-{
-    $kegiatan = Kegiatan::orderBy('tanggal')->get();
-    return view('nama-view-anda', compact('events'));
-}
-}
+    {
+        $kegiatans = Kegiatan::where('status', true)
+            ->whereDate('tanggal', '>=', now())
+            ->orderBy('tanggal')
+            ->get();
 
+        return view('pages.admin.kegiatan', compact('kegiatans'));
+    }
+}

@@ -80,7 +80,10 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::delete('/{img}', [ImgController::class, 'destroy'])->name('destroy');
     });
     Route::resource('/admin/program', ProgramController::class)->names('admin.program');
-    Route::resource('/admin/kegiatan', KegiatanController::class);
+    Route::resource('/admin/kegiatan', KegiatanController::class)->names('admin.kegiatan');
+    Route::patch('/admin/kegiatan/{kegiatan}/toggle', [KegiatanController::class, 'toggleStatus'])->name('admin.kegiatan.toggle');
+
+
 
 
 

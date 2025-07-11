@@ -16,6 +16,7 @@ class Kegiatan extends Model
         'isi',
         'lokasi',
         'tanggal',
+        'status',
     ];
 }
 

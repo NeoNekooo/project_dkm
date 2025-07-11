@@ -107,6 +107,12 @@
                         <span>Gallery</span>
                         <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
                     </a>
+                    <a href="{{ route('admin.kegiatan.index') }}"
+                       class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
+                        <i class="fas fa-work  w-5"></i>
+                        <span>Kegiatan</span>
+                        <i class="fas fa-chevron-right ml-auto text-xs opacity-70"></i>
+                    </a>
                     <a href="{{ route('admin.program.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-person-running  w-5"></i>

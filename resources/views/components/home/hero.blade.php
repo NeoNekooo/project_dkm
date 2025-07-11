@@ -17,7 +17,7 @@
                 <div class="w-16 h-1 bg-green-600 rounded-full"></div>
             </div>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-200 mb-6">
                 Selamat Datang di <span class="text-green-600">{{ $profil->nama }}</span>
             </h1>
 

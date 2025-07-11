@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->string('lokasi');
             $table->date('tanggal')->nullable();
             $table->timestamps();
+            $table->boolean('status')->default(true);
         });
     }
 
