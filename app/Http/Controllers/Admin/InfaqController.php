@@ -24,10 +24,14 @@ class InfaqController extends Controller
             'nomer_rekening' => 'nullable|string|max:50',
             'nama_rekening' => 'nullable|string|max:100',
             'picture' => 'nullable|image|max:2048',
+            'picture2' => 'nullable|image|max:2048',
         ]);
 
         if ($request->hasFile('picture')) {
             $data['picture'] = $request->file('picture')->store('infaq', 'public');
+        }
+        if ($request->hasFile('picture2')) {
+            $data['picture2'] = $request->file('picture2')->store('infaq', 'public');
         }
 
         $infaq->update($data);

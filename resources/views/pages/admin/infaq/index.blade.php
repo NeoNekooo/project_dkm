@@ -89,7 +89,26 @@
                     @if($infaq->picture)
                         <div class="mt-4">
                             <p class="text-sm text-gray-500 mb-2">Gambar Saat Ini:</p>
-                            <img src="" alt="Current Infaq Image"
+                            <img src="{{ asset('storage/' . $infaq->picture) }}" alt="Current Infaq Image"
+                                class="max-w-xs rounded-lg border border-gray-200">
+                        </div>
+                    @endif
+                </div>
+
+                <div class="md:col-span-2 space-y-2">
+                    <label class="block text-sm font-medium text-gray-700">
+                        <i class="fas fa-image text-green-600 mr-1"></i> Gambar Bank
+                    </label>
+                    <input type="file" name="picture2"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition" />
+                    @error('picture2')
+                        <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                    @enderror
+
+                    @if($infaq->picture2)
+                        <div class="mt-4">
+                            <p class="text-sm text-gray-500 mb-2">Gambar Saat Ini:</p>
+                            <img src="{{ asset('storage/' . $infaq->picture2) }}" alt="Current Infaq Image"
                                 class="max-w-xs rounded-lg border border-gray-200">
                         </div>
                     @endif

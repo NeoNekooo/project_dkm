@@ -24,7 +24,7 @@
                     </div>
                     <div>
                         <p class="text-sm text-green-600">Nomor Rekening</p>
-                        <p class="text-2xl font-bold text-gray-800 font-mono">0123 4141 2414 1</p>
+                        <p class="text-2xl font-bold text-gray-800 font-mono">{{$infaq->nomer_rekening}}</p>
                     </div>
                 </div>
             </div>
@@ -36,13 +36,13 @@
                     </div>
                     <div>
                         <p class="text-sm text-green-600">Atas Nama</p>
-                        <p class="text-2xl font-bold text-gray-800">Masjid Al-Ikhlash</p>
+                        <p class="text-2xl font-bold text-gray-800">{{$infaq->nama_rekening}}</p>
                     </div>
                 </div>
             </div>
 
             <div class="mt-8">
-                <a href="#" class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
+                <a href="{{ $profil->wa ? 'https://api.whatsapp.com/send?phone=' . $profil->wa : '#' }}" class="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300">
                     <i class="fas fa-paper-plane mr-2"></i>
                     Konfirmasi Transfer
                 </a>
@@ -52,7 +52,7 @@
         <!-- Bank Image -->
         <div class="order-1 md:order-2 flex justify-center group">
             <div class="relative overflow-hidden rounded-xl shadow-xl border-2 border-green-200 w-full max-w-md">
-                <img src="{{ asset('img/miaw.png') }}" alt="Bank Transfer"
+                <img src="{{ asset('storage/' . $infaq->picture2) }}" alt="Bank Transfer"
                      class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
                 <div class="absolute inset-0 bg-gradient-to-t from-green-900/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>

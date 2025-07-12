@@ -1,5 +1,5 @@
 @extends('layouts.user.user')
-{{-- @vite('resources/css/app.css') --}}
+@vite('resources/css/app.css')
 
 @section('title', 'Beranda')
 

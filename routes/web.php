@@ -16,8 +16,9 @@ use App\Http\Controllers\Admin\ProgramController;
 use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\ProgramRamadhanController;
 use App\Http\Controllers\Admin\AmalanController;
-use App\Http\Controllers\BlogController;
 use App\Http\Controllers\AmalanUserController;
+use App\Http\Controllers\Admin\ContactMessageController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Admin\PembangunanController;
@@ -53,6 +54,7 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.detail')
 Route::get('/kontak', function () {
     return view('pages.user.kontak');
 })->name('kontak');
+Route::post('/kontak/kirim', [ContactMessageController::class, 'store'])->name('kontak.kirim');
 
 Route::get('/pengumuman', function () {
     return view('pages.user.pengumuman');
@@ -108,6 +110,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/amalans/{amalan}/edit', [AmalanController::class, 'edit'])->name('amalans.edit');
     Route::put('/amalans/{amalan}', [AmalanController::class, 'update'])->name('amalans.update');
     Route::delete('/amalans/{amalan}', [AmalanController::class, 'destroy'])->name('amalans.destroy');
+
 
 });
 

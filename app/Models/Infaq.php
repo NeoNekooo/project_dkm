@@ -15,6 +15,7 @@ class Infaq extends Model
         'headline',
         'description',
         'picture',
+        'picture2',
         'nomer_rekening',
         'nama_rekening',
     ];

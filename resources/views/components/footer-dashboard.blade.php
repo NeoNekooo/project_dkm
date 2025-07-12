@@ -13,19 +13,19 @@
                     <i class="fab fa-facebook-f"></i>
                  </a>
 
-                 <a href="{{ $profil->ig }}"
+                 <a href="{{ $profil->ig ? 'https://www.instagram.com/' . $profil->ig : '#' }}"
                     class="text-green-200 hover:text-white transition-colors duration-200"
                     target="_blank">
                     <i class="fab fa-instagram"></i>
                  </a>
 
-                 <a href="{{ $profil->yt }}"
+                 <a href="{{ $profil->yt ? 'https://www.youtube.com/' . $profil->yt : '#' }}"
                     class="text-green-200 hover:text-white transition-colors duration-200"
                     target="_blank">
                     <i class="fab fa-youtube"></i>
                  </a>
 
-                 <a href="{{ $profil->wa }}"
+                 <a href="{{ $profil->wa ? 'https://api.whatsapp.com/send?phone=' . $profil->wa : '#' }}"
                     class="text-green-200 hover:text-white transition-colors duration-200"
                     target="_blank">
                     <i class="fab fa-whatsapp"></i>
