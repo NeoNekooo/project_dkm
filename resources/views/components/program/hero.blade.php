@@ -1,6 +1,6 @@
 
 <!-- CTA Section -->
-<section class="relative bg-gradient-to-b from-green-700 to-green-800 text-white py-24 px-6 overflow-hidden">
+<section id="program" class="relative bg-gradient-to-b from-green-700 to-green-800 text-white py-24 px-6 overflow-hidden">
     <!-- Decorative elements -->
     <div class="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl z-0"></div>
     <div class="absolute bottom-0 right-0 w-80 h-80 bg-green-600/10 rounded-full blur-3xl z-0"></div>

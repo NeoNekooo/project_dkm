@@ -22,7 +22,6 @@
         </p>
     </div>
 </section> --}}
-
 <!-- Form Section -->
 <section class="relative bg-white py-12 px-6 overflow-hidden">
     <!-- Decorative elements -->
@@ -93,12 +92,12 @@
                     </div>
 
                     <!-- Visi -->
-                    <div class="space-y-2 md:col-span-2">
+                    <div class="space-y-2">
                         <label class="block text-sm font-medium text-gray-700">
                             Visi Masjid
                         </label>
                         <div class="relative">
-                            <div class="absolute top-4 left-4 text-green-600">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-green-600">
                                 <i class="fas fa-eye"></i>
                             </div>
                             <textarea name="visi" rows="4"
@@ -122,6 +121,68 @@
                                 placeholder="Deskripsi lengkap tentang masjid">{{ old('isi', $profil->tentangKami->isi ?? '') }}</textarea>
                         </div>
                         <p class="text-xs text-gray-500">Sejarah dan profil lengkap masjid</p>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">
+                            Instagram
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-green-600">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <input type="text" name="ig" value="{{ old('ig', $profil->ig) }}"
+                                class="pl-12 block w-full border border-gray-200 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-300"
+                                placeholder="Username Instagram" />
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">
+                            Facebook
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-green-600">
+                                <i class="fab fa-facebook"></i>
+                            </div>
+                            <input type="text" name="fb" value="{{ old('fb', $profil->fb) }}"
+                                class="pl-12 block w-full border border-gray-200 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-300"
+                                placeholder="Link Facebook" />
+                        </div>
+                        <p class="text-xs text-gray-500">Profil Link</p>
+
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">
+                            YouTube
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-green-600">
+                                <i class="fab fa-youtube"></i>
+                            </div>
+                            <input type="text" name="yt" value="{{ old('yt', $profil->yt) }}"
+                                class="pl-12 block w-full border border-gray-200 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-300"
+                                placeholder="Link YouTube" />
+                        </div>
+                        <p class="text-xs text-gray-500">Username Youtube</p>
+
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-sm font-medium text-gray-700">
+                            WhatsApp
+                        </label>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-green-600">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <input type="text" name="wa" value="{{ old('wa', $profil->wa) }}"
+                                class="pl-12 block w-full border border-gray-200 rounded-lg p-3 focus:ring-2 focus:ring-green-500 focus:border-green-500 transition duration-300"
+                                placeholder="Nomor WhatsApp" />
+                        </div>
+
                     </div>
 
                     <!-- Logo -->

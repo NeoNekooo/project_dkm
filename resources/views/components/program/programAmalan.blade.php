@@ -1,5 +1,5 @@
 
-<section class="relative py-16 px-4 sm:px-6 overflow-hidden">
+<section id="Amalan" class="relative py-16 px-4 sm:px-6 overflow-hidden">
     <div class="absolute inset-0 z-0 opacity-10">
         <div class="absolute inset-0 "></div>
         <div class="absolute inset-0 bg-gradient-to-br from-white via-white/90 to-green-50/30"></div>
@@ -25,7 +25,7 @@
             <div class="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-green-300 rounded-bl-2xl"></div>
             <div class="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-green-300 rounded-br-2xl"></div>
 
-     
+
             <div class="p-8 border-b border-green-100/30 relative">
                 <div class="absolute -left-1 top-6 w-1 h-12 bg-green-400 rounded-full"></div>
                 <h3 class="text-xl font-bold text-green-700 mb-6 pl-6 relative">
@@ -50,7 +50,7 @@
                 </ul>
             </div>
 
-      
+
             <div class="p-8 border-b border-green-100/30 relative">
                 <div class="absolute -left-1 top-6 w-1 h-12 bg-green-400 rounded-full"></div>
                 <h3 class="text-xl font-bold text-green-700 mb-6 pl-6 relative">
@@ -75,7 +75,7 @@
                 </ul>
             </div>
 
-         
+
             <div class="p-8 relative">
                 <div class="absolute -left-1 top-6 w-1 h-12 bg-green-400 rounded-full"></div>
                 <h3 class="text-xl font-bold text-green-700 mb-6 pl-6 relative">

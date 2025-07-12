@@ -7,10 +7,29 @@
                 <span class="text-xl font-bold">{{ $profil->nama }}</span>
             </div>
             <div class="flex space-x-4 pt-2">
-                <a href="#" class="text-green-200 hover:text-white transition-colors duration-200"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-green-200 hover:text-white transition-colors duration-200"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-green-200 hover:text-white transition-colors duration-200"><i class="fab fa-youtube"></i></a>
-                <a href="#" class="text-green-200 hover:text-white transition-colors duration-200"><i class="fab fa-whatsapp"></i></a>
+                <a href="{{ $profil->fb ? 'https://www.facebook.com/' . $profil->fb : '#' }}"
+                    class="text-green-200 hover:text-white transition-colors duration-200"
+                    target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                 </a>
+
+                 <a href="{{ $profil->ig ? 'https://www.instagram.com/' . $profil->ig : '#' }}"
+                    class="text-green-200 hover:text-white transition-colors duration-200"
+                    target="_blank">
+                    <i class="fab fa-instagram"></i>
+                 </a>
+
+                 <a href="{{ $profil->yt ? 'https://www.youtube.com/' . $profil->yt : '#' }}"
+                    class="text-green-200 hover:text-white transition-colors duration-200"
+                    target="_blank">
+                    <i class="fab fa-youtube"></i>
+                 </a>
+
+                 <a href="{{ $profil->wa ? 'https://api.whatsapp.com/send?phone=' . $profil->wa : '#' }}"
+                    class="text-green-200 hover:text-white transition-colors duration-200"
+                    target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                 </a>
             </div>
         </div>
 
@@ -34,8 +53,8 @@
                 <i class="fas fa-calendar-check text-green-300 mr-2"></i> Program
             </h4>
             <ul class="space-y-3 text-sm text-green-100">
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Program Kami</a></li>
-                <li><a href="#" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Program Ramadhan</a></li>
+                <li><a href="{{ route('program') }}#program" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Program Kami</a></li>
+                <li><a href="{{ route('program') }}#Amalan" class="hover:text-white flex items-center"><i class="fas fa-chevron-right text-xs text-green-300 mr-2"></i> Amalan Harian</a></li>
             </ul>
         </div>
 
