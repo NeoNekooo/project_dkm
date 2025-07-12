@@ -7,25 +7,25 @@
                 <span class="text-xl font-bold">{{ $profil->nama }}</span>
             </div>
             <div class="flex space-x-4 pt-2">
-                <a href="{{ $profil->fb ? 'https://www.facebook.com/' . $profil->fb : '#' }}"
+                <a href="{{ $profil->fb }}"
                     class="text-green-200 hover:text-white transition-colors duration-200"
                     target="_blank">
                     <i class="fab fa-facebook-f"></i>
                  </a>
 
-                 <a href="{{ $profil->ig ? 'https://www.instagram.com/' . $profil->ig : '#' }}"
+                 <a href="{{ $profil->ig }}"
                     class="text-green-200 hover:text-white transition-colors duration-200"
                     target="_blank">
                     <i class="fab fa-instagram"></i>
                  </a>
 
-                 <a href="{{ $profil->yt ? 'https://www.youtube.com/' . $profil->yt : '#' }}"
+                 <a href="{{ $profil->yt }}"
                     class="text-green-200 hover:text-white transition-colors duration-200"
                     target="_blank">
                     <i class="fab fa-youtube"></i>
                  </a>
 
-                 <a href="{{ $profil->wa ? 'https://api.whatsapp.com/send?phone=' . $profil->wa : '#' }}"
+                 <a href="{{ $profil->wa }}"
                     class="text-green-200 hover:text-white transition-colors duration-200"
                     target="_blank">
                     <i class="fab fa-whatsapp"></i>
