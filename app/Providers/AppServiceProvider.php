@@ -10,7 +10,7 @@ use Illuminate\Support\ServiceProvider;
   use App\Models\Kegiatan;
 use App\Models\Program;
 use App\Models\Pembangunan;
-use App\Models\Amalan; 
+use App\Models\Amalan;
 use Illuminate\Support\Facades\View;
 
   use Illuminate\Pagination\Paginator;
@@ -46,7 +46,8 @@ class AppServiceProvider extends ServiceProvider
             $view->with('programs', Program::all());
             $view->with('pembangunans', Pembangunan::orderBy('urutan')->get()) ;
             $view->with('user', auth()->user());
-            $view->with('amalans', amalan::all());
+            $amalans = Amalan::all()->groupBy('kategori');
+            $view->with('amalans', $amalans);
 
 
         });
