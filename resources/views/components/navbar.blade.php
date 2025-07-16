@@ -15,6 +15,7 @@
             <x-nav-link href="{{ route('tentang') }}" :active="Route::is('tentang')">Tentang Kami</x-nav-link>
             <x-nav-link href="{{ route('program') }}" :active="Route::is('program')">Program</x-nav-link>
             <x-nav-link href="{{ route('infaq') }}" :active="Route::is('infaq')">Infaq</x-nav-link>
+            <x-nav-link href="{{ route('organigram') }}" :active="Route::is('organigram')">Organigram</x-nav-link>
             <x-nav-link href="{{ route('gallery') }}" :active="Route::is('gallery')">Gallery</x-nav-link>
 
             <!-- Dropdown Informasi -->

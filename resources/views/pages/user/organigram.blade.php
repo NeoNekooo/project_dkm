@@ -1,12 +1,12 @@
 @extends('layouts.user.user')
 
-@section('title', 'event')
+@section('title', 'Organgram')
 
 @section('content')
 <x-navbar />
 
-<x-penguman.pengumuman />
-
+<x-organigram.organigram />
+{{-- <x-lokasi> --}}
 <x-footer-dashboard />
 
 @endsection

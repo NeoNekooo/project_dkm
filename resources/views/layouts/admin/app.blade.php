@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />a
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ env('APP_NAME') }} | @yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/e686fa0059.js" crossorigin="anonymous"></script>
@@ -123,8 +123,14 @@
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-image  w-5"></i>
                         <span>Gallery</span>
-
                     </a>
+
+                      <a href="{{ route('admin.organigram.edit') }}"
+                       class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
+                        <i class="fas fa-sitemap  w-5"></i>
+                        <span>organigram</span>
+                    </a>
+
                     <a href="{{ route('admin.kegiatan.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-calendar  w-5"></i>

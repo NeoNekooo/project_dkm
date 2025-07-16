@@ -11,6 +11,7 @@ use Illuminate\Support\ServiceProvider;
 use App\Models\Program;
 use App\Models\Pembangunan;
 use App\Models\Amalan;
+use App\Models\Organigram;
 use Illuminate\Support\Facades\View;
 
   use Illuminate\Pagination\Paginator;
@@ -48,6 +49,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('user', auth()->user());
             $amalans = Amalan::all()->groupBy('kategori');
             $view->with('amalans', $amalans);
+            $view->with('organigram', organigram::first());
 
 
         });

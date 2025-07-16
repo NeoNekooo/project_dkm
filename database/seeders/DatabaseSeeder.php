@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             InfaqSeeder::class,
             PostSeeder::class,
             KegiatanSeeder::class,
+            OrganigramSeeder::class,
         ]);
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\DkmProfilController;
 use App\Http\Controllers\Admin\TentangKamiController;
+use App\Http\Controllers\Admin\OrganigramController;
 use App\Http\Controllers\Admin\KontakController;
 use App\Http\Controllers\Admin\InfaqController;
 use App\Http\Controllers\Admin\PostController;
@@ -42,6 +43,10 @@ Route::get('/infaq', function () {
     return view('pages.user.infaq');
 })->name('infaq');
 
+Route::get('/organigram', function () {
+    return view('pages.user.organigram');
+})->name('organigram');
+
 Route::get('/event-mesjid', function () {
     return view('pages.user.event-mesjid');
 })->name('event-mesjid');
@@ -73,6 +78,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
 
     Route::get('/kontak', [KontakController::class, 'index'])->name('kontak.index');
     Route::put('/kontak/update', [KontakController::class, 'update'])->name('kontak.update');
+
+    Route::get('/organigram', [OrganigramController::class, 'edit'])->name('organigram.edit');
+    Route::put('/organigram/update', [OrganigramController::class, 'update'])->name('organigram.update');
+
 
     Route::get('/tentang-kami', [TentangKamiController::class, 'index'])->name('tentang.index');
     Route::put('/tentang-kami/update', [TentangKamiController::class, 'update'])->name('tentang.update');
