@@ -1,12 +1,10 @@
 <section class="relative h-screen flex items-center justify-center bg-no-repeat bg-cover bg-center overflow-hidden"
-    style="background-image: url('{{ asset('storage/' . $profil->background) }}');">
+    style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.3)), url('{{ asset('storage/' . $profil->background) }}');">
     <!-- Decorative elements -->
-    <div class="absolute top-0 left-0 w-64 h-64 bg-green-100 rounded-full blur-[100px] opacity-60"></div>
-    <div class="absolute bottom-0 right-0 w-80 h-80 bg-green-50 rounded-full blur-[100px] opacity-60"></div>
+    {{-- <div class="absolute top-0 left-0 w-64 h-64 bg-green-400 rounded-full blur-[100px] opacity-60"></div> --}}
+    {{-- <div class="absolute bottom-0 right-0 w-80 h-80 bg-green-50 rounded-full blur-[100px] opacity-60"></div> --}}
 
     <!-- Subtle Islamic pattern -->
-    <div class="absolute inset-0 opacity-10 bg-[url('https://i.pinimg.com/736x/3e/3f/4f/3e3f4f19b77e2cd505cf4d1d7b30f3e2.jpg')] bg-cover mix-blend-overlay"></div>
-
     <!-- Content container -->
     <div class="relative z-10 text-center max-w-4xl mx-auto px-6 py-12">
         <!-- Islamic greeting with decorative elements -->
@@ -18,7 +16,7 @@
             </div>
 
             <h1 class="text-4xl md:text-5xl font-bold text-gray-200 mb-6">
-                Selamat Datang di <span class="text-green-600">{{ $profil->nama }}</span>
+                Selamat Datang <br> di <span class="text-green-600">{{ $profil->nama }}</span>
             </h1>
 
             <p class="text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed">
@@ -51,10 +49,6 @@
         </div>
 
         <!-- Scroll indicator -->
-        <div class="absolute mt-4 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-        </div>
+
     </div>
 </section>

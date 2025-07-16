@@ -20,7 +20,7 @@
 
     <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
         @csrf
-        @method('PUT')
+        @method('PATCH')
 
         <!-- Foto Profil -->
         <div>

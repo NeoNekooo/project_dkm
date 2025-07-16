@@ -3,62 +3,67 @@
 @section('title', 'Daftar Postingan Blog')
 
 @section('content')
-<div class="mb-6">
-    <a href="{{ route('admin.post.create') }}"
-       class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-all">
-        <i class="fas fa-plus mr-1"></i> Tambah Postingan
-    </a>
-</div>
-
-@if (session('success'))
-    <div class="mb-4 p-4 bg-green-100 text-green-700 rounded-lg">
-        {{ session('success') }}
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 gap-4">
+        <h1 class="text-2xl font-bold text-gray-800">Daftar Postingan Blog</h1>
+        <a href="{{ route('admin.post.create') }}"
+           class="inline-flex items-center bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg shadow-md transition-all whitespace-nowrap">
+            <i class="fas fa-plus mr-2"></i> Tambah Postingan
+        </a>
     </div>
-@endif
 
-<div class="bg-white shadow rounded-xl overflow-hidden">
-    <table class="min-w-full divide-y divide-gray-200 text-sm">
-        <thead class="bg-gray-100 text-gray-600">
-            <tr>
-                <th class="px-6 py-3 text-left font-medium">Judul</th>
-                <th class="px-6 py-3 text-left font-medium">Photo</th>
-                <th class="px-6 py-3 text-left font-medium">Publish</th>
-                <th class="px-6 py-3 text-center font-medium">Aksi</th>
-            </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200">
-            @forelse($posts as $post)
-                <tr>
-                    <td class="px-6 py-4">{{ $post->title }}</td>
-                    <td class="px-6 py-4">
-                        @if ($post->thumbnail)
-                            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="Thumbnail" class="h-16 w-16 object-cover rounded shadow">
-                        @else
-                            <span class="text-gray-500">Tidak ada thumbnail</span>
-                        @endif
-                    </td>
-                    <td class="px-6 py-4">{{ $post->published_at ? \Carbon\Carbon::parse($post->published_at)->translatedFormat('d M Y') : '-' }}</td>
-                    <td class="px-6 py-4 text-center space-x-2">
-                        <a href="{{ route('admin.post.edit', $post->id) }}"
-                           class="inline-block bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded text-xs">
-                            Edit
-                        </a>
-                        <form action="{{ route('admin.post.destroy', $post->id) }}" method="POST" class="inline-block" onsubmit="return confirm('Yakin ingin menghapus postingan ini?')">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit"
-                                    class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs">
-                                Hapus
-                            </button>
-                        </form>
-                    </td>
-                </tr>
-            @empty
-                <tr>
-                    <td colspan="4" class="px-6 py-4 text-center text-gray-500">Belum ada postingan.</td>
-                </tr>
-            @endforelse
-        </tbody>
-    </table>
+    @if (session('success'))
+        <div class="mb-6 p-4 bg-green-100 text-green-700 rounded-lg">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if($posts->isEmpty())
+        <div class="bg-white rounded-xl shadow-sm p-6 text-center">
+            <p class="text-gray-500">Belum ada postingan.</p>
+            <a href="{{ route('admin.post.create') }}" class="mt-4 inline-block text-green-600 hover:text-green-700 font-medium">
+                Buat postingan pertama Anda
+            </a>
+        </div>
+    @else
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            @foreach($posts as $post)
+                <div class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow duration-300">
+                    @if($post->thumbnail)
+                        <div class="h-48 overflow-hidden">
+                            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}"
+                                 class="w-full h-full object-cover">
+                        </div>
+                    @endif
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-semibold text-gray-800 line-clamp-2">{{ $post->title }}</h3>
+                        </div>
+
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i class="far fa-calendar-alt mr-2"></i>
+                            <span>{{ $post->published_at ? \Carbon\Carbon::parse($post->published_at)->translatedFormat('d M Y') : 'Belum dipublikasi' }}</span>
+                        </div>
+
+                        <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-100">
+                            <a href="{{ route('admin.post.edit', $post->id) }}"
+                               class="flex-1 min-w-[100px] text-center bg-blue-50 hover:bg-blue-100 text-blue-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                                <i class="fas fa-pen mr-1"></i> Edit
+                            </a>
+                            <form action="{{ route('admin.post.destroy', $post->id) }}" method="POST" class="flex-1 min-w-[100px]"
+                                  onsubmit="return confirm('Yakin ingin menghapus postingan ini?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                        class="w-full bg-red-50 hover:bg-red-100 text-red-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                                    <i class="fas fa-trash mr-1"></i> Hapus
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    @endif
 </div>
 @endsection

@@ -4,8 +4,8 @@
 
 @section('content')
 <x-navbar />
-
-<x-gallery.hero />
+{{-- 
+<x-gallery.hero /> --}}
 
 <section class="relative bg-white py-12 px-6 overflow-hidden" x-data="galleryApp()">
     <!-- ...dekorasi dan header... -->

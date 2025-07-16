@@ -7,6 +7,6 @@
 
 
 <x-tentang-kami.about />
-<x-tentang-kami.profil />
+{{-- <x-tentang-kami.profil /> --}}
 <x-footer-dashboard />
 @endsection

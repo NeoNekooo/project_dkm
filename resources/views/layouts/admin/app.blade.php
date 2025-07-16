@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />a
     <title>{{ env('APP_NAME') }} | @yield('title')</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/e686fa0059.js" crossorigin="anonymous"></script>
@@ -137,11 +137,6 @@
                         <span>Program</span>
 
                     </a>
-                    <a href="{{ route('admin.pembangunan.index') }}"
-                       class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
-                        <i class="fas fa-mosque  w-5"></i>
-                        <span>Pembangunan</span>
-                    </a>
                      <a href="{{ route('admin.amalans.index') }}"
                        class="flex items-center gap-3 py-3 px-4 rounded-lg hover:bg-white/10 transition-colors duration-200">
                         <i class="fas fa-mosque  w-5"></i>
@@ -174,7 +169,7 @@
             </aside>
 
             <!-- Content - White Theme -->
-            <main class="flex-1 p-6 bg-gray-50">
+            <main class="flex-1 p-4 bg-gray-50">
                 <!-- Page Header -->
                 <div class="mb-6 flex justify-between items-center">
                     <div>
@@ -189,7 +184,8 @@
                 </div>
 
                 <!-- Content Section -->
-                <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6">
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100  w-full max-w-screen-xl mx-auto">
+
                     @yield('content')
                 </div>
             </main>
