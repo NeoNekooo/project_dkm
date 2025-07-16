@@ -123,4 +123,14 @@ class PostController extends Controller
 
         return back()->with('success', 'Gambar berhasil dihapus.');
     }
+
+    public function togglePublish(Post $post)
+{
+    $post->is_published = !$post->is_published;
+    $post->published_at = $post->is_published ? now() : null;
+    $post->save();
+
+    return back()->with('success', 'Status publikasi berhasil diperbarui.');
+}
+
 }

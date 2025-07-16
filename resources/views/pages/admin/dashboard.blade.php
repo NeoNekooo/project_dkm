@@ -23,32 +23,6 @@
     </div>
 </section>
 
-{{-- Quick Stats Section --}}
-<section class="py-8">
-    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Infaq Total Card -->
-        <div class="bg-green-50 border border-green-100 rounded-xl p-6 shadow text-center">
-            <i class="fas fa-hand-holding-heart text-3xl text-green-600 mb-3"></i>
-            <h3 class="text-xl font-bold text-gray-700">Total Infaq</h3>
-            <p class="text-lg text-green-700 mt-1">Rp 12.000.000</p>
-        </div>
-
-        <!-- Jumlah Pengurus -->
-        <div class="bg-green-50 border border-green-100 rounded-xl p-6 shadow text-center">
-            <i class="fas fa-users text-3xl text-green-600 mb-3"></i>
-            <h3 class="text-xl font-bold text-gray-700">Jumlah Pengurus</h3>
-            <p class="text-lg text-green-700 mt-1">8 Orang</p>
-        </div>
-
-        <!-- Laporan Masuk -->
-        <div class="bg-green-50 border border-green-100 rounded-xl p-6 shadow text-center">
-            <i class="fas fa-file-alt text-3xl text-green-600 mb-3"></i>
-            <h3 class="text-xl font-bold text-gray-700">Laporan</h3>
-            <p class="text-lg text-green-700 mt-1">2 Laporan Masuk</p>
-        </div>
-    </div>
-</section>
-
 {{-- Extra Tips Section (Optional) --}}
 <section class="py-8">
     <div class="max-w-3xl mx-auto bg-white p-6 rounded-xl shadow border border-gray-100 text-center">

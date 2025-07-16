@@ -18,7 +18,6 @@ use App\Http\Controllers\Admin\SettingsController;
 use App\Http\Controllers\Admin\ProgramRamadhanController;
 use App\Http\Controllers\Admin\AmalanController;
 use App\Http\Controllers\AmalanUserController;
-use App\Http\Controllers\Admin\ContactMessageController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -59,7 +58,6 @@ Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.detail')
 Route::get('/kontak', function () {
     return view('pages.user.kontak');
 })->name('kontak');
-Route::post('/kontak/kirim', [ContactMessageController::class, 'store'])->name('kontak.kirim');
 
 Route::get('/pengumuman', function () {
     return view('pages.user.pengumuman');
@@ -68,6 +66,8 @@ Route::get('/pengumuman', function () {
 Route::get('/gallery', [ImgController::class, 'showGallery'])->name('gallery');
 
 Route::get('/sejarah-pembangunan', [ImgController::class, 'showTimeline'])->name('timeline');
+
+
 
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
 
@@ -79,8 +79,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/kontak', [KontakController::class, 'index'])->name('kontak.index');
     Route::put('/kontak/update', [KontakController::class, 'update'])->name('kontak.update');
 
-    Route::get('/organigram', [OrganigramController::class, 'edit'])->name('organigram.edit');
-    Route::put('/organigram/update', [OrganigramController::class, 'update'])->name('organigram.update');
 
 
     Route::get('/tentang-kami', [TentangKamiController::class, 'index'])->name('tentang.index');
@@ -92,6 +90,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('blog', PostController::class)
         ->names('post')
         ->parameters(['blog' => 'post']);
+
+
+        Route::patch('/post/{post}/toggle-publish', [PostController::class, 'togglePublish'])
+        ->name('post.togglePublish');
+
 
     Route::prefix('gallery')->name('gallery.')->group(function () {
         Route::get('/', [ImgController::class, 'index'])->name('index');
@@ -105,7 +108,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('program', ProgramController::class)->names('program');
 
     Route::resource('kegiatan', KegiatanController::class)->names('kegiatan');
-    Route::patch('/kegiatan/{kegiatan}/toggle', [KegiatanController::class, 'toggleStatus'])->name('kegiatan.toggle');
+
 
     Route::resource('pembangunan', PembangunanController::class)->names('pembangunan');
 
@@ -119,7 +122,10 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/amalans/{amalan}/edit', [AmalanController::class, 'edit'])->name('amalans.edit');
     Route::put('/amalans/{amalan}', [AmalanController::class, 'update'])->name('amalans.update');
     Route::delete('/amalans/{amalan}', [AmalanController::class, 'destroy'])->name('amalans.destroy');
-
+    Route::delete('/organigram/image', [OrganigramController::class, 'deleteImage'])->name('organigram.deleteImage');
+Route::get('/organigram', [OrganigramController::class, 'edit'])->name('organigram.edit');
+Route::put('/organigram', [OrganigramController::class, 'update'])->name('organigram.update');
+Route::delete('/organigram/image', [OrganigramController::class, 'deleteImage'])->name('organigram.deleteImage');
 
 });
 

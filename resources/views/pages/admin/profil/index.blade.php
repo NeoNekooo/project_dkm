@@ -2,27 +2,7 @@
 @section('title', 'Edit Profil')
 
 @section('content')
-<!-- Hero Header -->
-{{-- <section class="relative bg-gradient-to-b from-green-600 to-green-700 py-16 px-6 overflow-hidden">
-    <!-- Decorative elements -->
-    <div class="absolute top-0 right-0 w-64 h-64 bg-green-500 rounded-full blur-[100px] opacity-20"></div>
-    <div class="absolute bottom-0 left-0 w-80 h-80 bg-green-400 rounded-full blur-[100px] opacity-20"></div>
 
-    <div class="relative z-10 max-w-4xl mx-auto text-center">
-        <div class="inline-flex items-center justify-center gap-4 mb-4">
-            <div class="w-16 h-1 bg-white/50 rounded-full"></div>
-            <span class="text-white/90 uppercase tracking-widest text-sm font-medium">Profil Masjid</span>
-            <div class="w-16 h-1 bg-white/50 rounded-full"></div>
-        </div>
-        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span class="text-white/90">Edit</span> Profil Masjid
-        </h1>
-        <p class="text-white/80 max-w-2xl mx-auto">
-            Kelola identitas dan informasi utama masjid
-        </p>
-    </div>
-</section> --}}
-<!-- Form Section -->
 <section class="relative bg-white py-12 px-6 overflow-hidden">
     <!-- Decorative elements -->
     <div class="absolute top-0 right-0 w-64 h-64 bg-green-100 rounded-full blur-[100px] opacity-40"></div>

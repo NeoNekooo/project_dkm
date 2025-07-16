@@ -3,10 +3,8 @@
 @section('title', 'event')
 
 @section('content')
-<x-navbar />
 
 <x-penguman.pengumuman />
 
-<x-footer-dashboard />
 
 @endsection

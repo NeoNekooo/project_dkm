@@ -7,7 +7,6 @@
 
 
 
-<x-navbar />
 
 <x-home.hero />
     {{-- <div  class="bg-green-800 text-white py-2 px-4 md:px-8 flex justify-between items-center text-sm">
@@ -32,7 +31,6 @@
     {{-- <x-home.donasi /> --}}
     <x-lokasi />
     <x-home.jadwal-azan/>
-    <x-footer-dashboard />
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">

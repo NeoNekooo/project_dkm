@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ env('APP_NAME') }} | @yield('title')</title>
 
-    @vite('resources/css/app.css')
+    @vite('resources/css/app.css') @vite('resources/js/app.js')
 
     {{-- Font Awesome --}}
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
@@ -14,11 +14,14 @@
 </head>
 <body class="bg-white text-gray-900 antialiased">
 
+    <x-navbar />
     @yield('content')
 
     <style>
         [x-cloak] { display: none !important; }
     </style>
+<x-footer-dashboard />
+
 
 </body>
 </html>

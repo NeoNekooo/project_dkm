@@ -76,14 +76,18 @@
                                class="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none">
                                 Edit
                             </a>
-                            <form action="{{ route('admin.kegiatan.destroy', $item) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus kegiatan ini?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"
-                                        class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none">
-                                    Hapus
-                                </button>
-                            </form>
+                                                    <x-modal
+    id="deleteKegiatan{{ $item->id }}"
+    :action="route('admin.kegiatan.destroy', $item->id)"
+    title="Hapus Program"
+    message="Apakah kamu yakin ingin menghapus program ini? {{ $item->judul }}"
+    confirm="Ya, Hapus"
+    triggerClass="inline-flex items-center px-3 py-1.5 text-sm rounded-md text-white bg-red-600 hover:bg-red-700"
+>
+
+</x-modal>
+
+
                         </div>
                     </div>
                 </div>

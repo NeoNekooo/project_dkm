@@ -46,8 +46,8 @@
                     <div class="p-5">
                         <div class="flex items-center mb-3">
                             <div class="flex-shrink-0">
-                                <div class="h-10 w-10 rounded-full {{ $program->color }} flex items-center justify-center">
-                                    <i class="{{ $program->icon }} text-white"></i>
+                                <div class="h-10 w-10 rounded-full flex items-center justify-center {{ $program->color }}">
+                                    <i class="fa {{ $program->icon }} text-white text-base"></i>
                                 </div>
                             </div>
                             <div class="ml-4">
@@ -57,24 +57,26 @@
 
                         <p class="text-gray-600 text-sm mb-4 line-clamp-3">{{ $program->desc }}</p>
 
-                        <div class="flex items-center text-sm text-gray-500 mb-2">
-                            <span class="inline-block w-3 h-3 rounded-full mr-2 {{ $program->color }}"></span>
-                            <span>Warna: {{ $program->color }}</span>
-                        </div>
+
 
                         <div class="mt-4 pt-4 border-t border-gray-100 flex justify-end space-x-2">
                             <a href="{{ route('admin.program.edit', $program->id) }}"
                                class="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none">
                                 Edit
                             </a>
-                            <form action="{{ route('admin.program.destroy', $program->id) }}" method="POST" onsubmit="return confirm('Yakin ingin menghapus program ini?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit"
-                                        class="inline-flex items-center px-3 py-1.5 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none">
-                                    Hapus
-                                </button>
-                            </form>
+
+                            {{-- Use your reusable modal --}}
+                          <x-modal
+    id="deleteProgram{{ $program->id }}"
+    :action="route('admin.program.destroy', $program->id)"
+    title="Hapus Program"
+    message="Apakah kamu yakin ingin menghapus program ini?"
+    confirm="Ya, Hapus"
+    triggerClass="inline-flex items-center px-3 py-1.5 text-sm rounded-md text-white bg-red-600 hover:bg-red-700"
+>
+
+</x-modal>
+
                         </div>
                     </div>
                 </div>
@@ -82,4 +84,4 @@
         </div>
     @endif
 </div>
-@endsection     
+@endsection

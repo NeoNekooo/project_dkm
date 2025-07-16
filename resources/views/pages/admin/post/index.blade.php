@@ -35,30 +35,58 @@
                                  class="w-full h-full object-cover">
                         </div>
                     @endif
+
                     <div class="p-5">
                         <div class="flex justify-between items-start mb-2">
                             <h3 class="text-lg font-semibold text-gray-800 line-clamp-2">{{ $post->title }}</h3>
                         </div>
 
-                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                        <div class="flex items-center text-sm text-gray-500 mb-2">
                             <i class="far fa-calendar-alt mr-2"></i>
                             <span>{{ $post->published_at ? \Carbon\Carbon::parse($post->published_at)->translatedFormat('d M Y') : 'Belum dipublikasi' }}</span>
                         </div>
 
+                        <div class="flex items-center text-sm mb-4">
+                            @if($post->is_published)
+                                <span class="inline-flex items-center px-2 py-1 bg-green-100 text-green-700 text-xs rounded">
+                                    <i class="fas fa-check-circle mr-1"></i> Dipublikasi
+                                </span>
+                            @else
+                                <span class="inline-flex items-center px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                                    <i class="fas fa-clock mr-1"></i> Draft
+                                </span>
+                            @endif
+                        </div>
+
                         <div class="flex flex-wrap gap-2 pt-3 border-t border-gray-100">
                             <a href="{{ route('admin.post.edit', $post->id) }}"
-                               class="flex-1 min-w-[100px] text-center bg-blue-50 hover:bg-blue-100 text-blue-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                               class="flex-1 min-w-[50px] text-center bg-blue-50 hover:bg-blue-100 text-blue-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
                                 <i class="fas fa-pen mr-1"></i> Edit
                             </a>
-                            <form action="{{ route('admin.post.destroy', $post->id) }}" method="POST" class="flex-1 min-w-[100px]"
-                                  onsubmit="return confirm('Yakin ingin menghapus postingan ini?')">
+
+                            {{-- Toggle Publish --}}
+                            <form action="{{ route('admin.post.togglePublish', $post->id) }}" method="POST" class="flex-1 min-w-[50px]">
                                 @csrf
-                                @method('DELETE')
+                                @method('PATCH')
                                 <button type="submit"
-                                        class="w-full bg-red-50 hover:bg-red-100 text-red-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors">
-                                    <i class="fas fa-trash mr-1"></i> Hapus
+                                    class="w-full text-center {{ $post->is_published ? 'bg-yellow-50 hover:bg-yellow-100 text-yellow-600' : 'bg-green-50 hover:bg-green-100 text-green-700' }} px-3 py-2 rounded-lg text-sm font-medium transition-colors">
+                                    @if($post->is_published)
+                                        <i class="fas fa-eye-slash mr-1"></i> Unpublish
+                                    @else
+                                        <i class="fas fa-eye mr-1"></i> Publish
+                                    @endif
                                 </button>
                             </form>
+
+                            {{-- Hapus --}}
+                            <x-modal
+                                id="deletePost{{ $post->id }}"
+                                :action="route('admin.post.destroy', $post->id)"
+                                title="Hapus Post"
+                                message="Apakah kamu yakin ingin menghapus Post ini?"
+                                confirm="Ya, Hapus"
+                                triggerClass="w-full bg-red-50 hover:bg-red-100 text-red-600 px-3 py-2 rounded-lg text-sm font-medium transition-colors"
+                            />
                         </div>
                     </div>
                 </div>
