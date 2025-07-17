@@ -96,7 +96,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
         ->name('post.togglePublish');
 
 
-    Route::prefix('gallery')->name('gallery.')->group(function () {
+        Route::prefix('gallery')->name('gallery.')->group(function () {
         Route::get('/', [ImgController::class, 'index'])->name('index');
         Route::get('/create', [ImgController::class, 'create'])->name('create');
         Route::post('/', [ImgController::class, 'store'])->name('store');
@@ -108,6 +108,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('program', ProgramController::class)->names('program');
 
     Route::resource('kegiatan', KegiatanController::class)->names('kegiatan');
+Route::patch('/kegiatan/{kegiatan}/toggle', [KegiatanController::class, 'toggleStatus'])->name('kegiatan.toggle');  
 
 
     Route::resource('pembangunan', PembangunanController::class)->names('pembangunan');
