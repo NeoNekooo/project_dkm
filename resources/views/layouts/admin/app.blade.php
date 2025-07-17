@@ -57,11 +57,9 @@
     </nav>
 
     <!-- Wrapper -->
-    <div class="flex flex-1">
         <!-- Sidebar -->
         <aside id="sidebar"
-            class="w-64 bg-gradient-to-b from-green-700 to-green-800 text-white py-6 px-4 hidden md:block transition-all duration-300">
-
+             class="fixed top-[64px] left-0 h-[calc(100vh-64px)] w-64 bg-gradient-to-b from-green-700 to-green-800 text-white py-6 px-4 hidden md:block overflow-y-auto z-40">
             <!-- User Profile -->
             <div class="flex flex-col items-center mb-8">
                 <div class="relative mb-3">
@@ -111,7 +109,7 @@
         </aside>
 
         <!-- Content -->
-        <main class="flex-1 p-4 bg-gray-50">
+        <main class="flex-1 p-4 md:ml-64 bg-gray-50">
             <!-- Header -->
             <div class="mb-6 flex justify-between items-center">
                 <div>
@@ -130,12 +128,11 @@
                 @yield('content')
             </div>
         </main>
-    </div>
 
     <!-- Footer -->
     <footer class="bg-white border-t py-4 text-center text-sm text-gray-500">
         <div class="max-w-6xl mx-auto px-4">
-            <p>© {{ date('Y') }} {{ $profil->nama}}. All rights reserved. version(2.0)</p>
+            <p>© {{ date('Y') }} {{ $profil->nama}}. All rights reserved. version(2.2)</p>
         </div>
     </footer>
 </div>
