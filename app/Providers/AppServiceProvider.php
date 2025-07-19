@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
   use App\Models\DkmProfil;
-  use App\Models\infaq;
+  use App\Models\Infaq;
   use App\Models\Post;
   use App\Models\Img;
   use App\Models\Kegiatan;

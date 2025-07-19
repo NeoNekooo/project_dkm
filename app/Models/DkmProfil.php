@@ -26,10 +26,10 @@ class DkmProfil extends Model
         'wa',
     ];
 
-    
+
     public function kontak()
     {
-        return $this->belongsTo(kontak::class, 'id_kontak');
+        return $this->belongsTo(Kontak::class, 'id_kontak');
     }
 
     public function logo()
